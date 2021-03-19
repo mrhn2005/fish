@@ -6,7 +6,10 @@
 <meta charset="utf-8">
 <title>Tyumen HTML Template | Homepage One</title>
 <!-- Stylesheets -->
-<link href="{{asset('template/main.css')}}" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/revolution-slider.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/responsive.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 <!-- Responsive -->
@@ -24,139 +27,6 @@
     {{-- <div class="preloader"></div> --}}
 
     <!-- Main Header-->
-    <header class="main-header">
-    	<!-- Header Top -->
-    	<div class="header-top">
-        	<div class="auto-container">
-            	<div class="clearfix">
-
-                    <!--Top Left-->
-                    <div class="top-left">
-                    	<ul class="link-nav clearfix">
-                        	<li><a href="#"><span class="icon flaticon-headphones"></span>Call Us: 01 2345 6789</a></li>
-                            <li><a href="#"><span class="icon flaticon-interface"></span>Mail Us: info@tyumen.com</a></li>
-                        </ul>
-                    </div>
-
-                    <!--Top Right-->
-                    <div class="top-right">
-                    	<ul class="link-nav">
-                        	<li><a href="#"><span class="icon flaticon-user"></span>Login / Sign Up</a></li>
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-        <!-- Header Top End -->
-
-        <!-- Main Box -->
-    	<div class="main-box">
-        	<div class="auto-container">
-            	<div class="outer-container clearfix">
-                    <!--Logo Box-->
-                    <div class="logo-box">
-                        <div class="logo"><a href="index-2.html"><img src="images/logo.png" alt=""></a></div>
-                    </div>
-
-                    <!--Nav Outer-->
-                    <div class="nav-outer clearfix">
-                        <!-- Main Menu -->
-                        <nav class="main-menu">
-                            <div class="navbar-header">
-                                <!-- Toggle Button -->
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-
-                            <div class="navbar-collapse collapse clearfix">
-                                <ul class="navigation clearfix">
-                                    <li class="current dropdown"><a href="#">Home</a>
-                                    	<ul>
-                                            <li><a href="index-2.html">Homepage One</a></li>
-                                            <li><a href="index-3.html">Homepage Two</a></li>
-                                            <li><a href="index-4.html">Homepage Three</a></li>
-                                            <li class="dropdown"><a href="#">Headers Style</a>
-                                                <ul>
-                                                    <li><a href="index-2.html">Header Style One</a></li>
-                                                    <li><a href="index-3.html">Header Style Two</a></li>
-                                                    <li><a href="index-4.html">Header Style Three</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">About Us</a>
-                                    	<ul>
-                                            <li><a href="about.html">About Us</a></li>
-                                            <li><a href="our-team.html">Our Team</a></li>
-                                            <li><a href="error-page.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Gallery</a>
-                                    	<ul>
-                                            <li><a href="gallery.html">Gallery Masonry</a></li>
-                                            <li><a href="project-fullwidth.html">Gallery Full Width</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Blog</a>
-                                    	<ul>
-                                            <li><a href="blog-two-column.html">Blog Two Column</a></li>
-                                            <li><a href="blog-three-column.html">Blog Three Column</a></li>
-                                            <li><a href="blog-single.html">Blog Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="#">Our Shop</a>
-                                        <ul>
-                                            <li><a href="shop.html">Shop</a></li>
-                                            <li><a href="shop-single.html">Shop Single</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                 </ul>
-                            </div>
-                        </nav>
-                        <!-- Main Menu End-->
-
-                        <!--Right Info-->
-                        <div class="info-options">
-                        	<!--Info Block-->
-                            <div class="info-block clearfix">
-                                <!--Search Box-->
-                                <div class="search-box-outer">
-                                    <div class="dropdown">
-                                        <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-search"></span></button>
-                                        <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
-                                            <li class="panel-outer">
-                                                <div class="form-container">
-                                                    <form method="post" action="http://wp.hostlin.com/tyumen/blog.html">
-                                                        <div class="form-group">
-                                                            <input type="search" name="field-name" value="" placeholder="Search Here" required>
-                                                            <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!--Cart Button-->
-                                <a href="shop-single.html" class="cart-btn flaticon-shopping-cart-1"><span class="item-count">0</span></a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--Nav Outer End-->
-
-            	</div>
-            </div>
-        </div>
-
-    </header>
     <!--End Main Header -->
 
     <!--Main Slider-->
@@ -991,7 +861,18 @@
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-up"></span></div>
 
-<script src="{{asset('template/main.js')}}"></script>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/revolution.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 <!-- Mirrored from wp.hostlin.com/tyumen/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Mar 2021 18:19:46 GMT -->

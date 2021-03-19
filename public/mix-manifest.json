@@ -1,6 +1,5 @@
 {
-    "/template/main.js": "/template/main.js",
-    "/template/main.css": "/template/main.css",
+    "/css/main.css": "/css/main.css",
     "/template/fonts/flaticon.eot": "/template/fonts/flaticon.eot",
     "/template/fonts/flaticon.svg": "/template/fonts/flaticon.svg",
     "/template/fonts/flaticon.ttf": "/template/fonts/flaticon.ttf",
