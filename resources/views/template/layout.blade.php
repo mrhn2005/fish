@@ -12,6 +12,21 @@
 <link href="css/responsive.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<style>
+.search-box-outer {
+    border: none;
+}
+
+/* .main-menu .navigation > li {
+    padding: 15px 0px;
+}
+.main-header .main-box .logo-box {
+    padding: 15px 0px;
+}
+.main-header .search-box-outer .dropdown-menu {
+    top: 71px;
+} */
+</style>
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -27,153 +42,11 @@
     {{-- <div class="preloader"></div> --}}
 
     <!-- Main Header-->
+    <x-header/>
     <!--End Main Header -->
 
     <!--Main Slider-->
-    <section class="main-slider" data-start-height="850" data-slide-overlay="yes">
-
-        <div class="tp-banner-container">
-            <div class="tp-banner">
-                <ul>
-
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/image-1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/main-slider/image-1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption sft sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="-50"
-                    data-speed="1500"
-                    data-start="0"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h3>Healthy & Affordable</h3></div>
-
-                    <div class="tp-caption sfb sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="25"
-                    data-speed="1500"
-                    data-start="500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h2>Organic Fruit, Vegetables and Meat</h2></div>
-
-                    <div class="tp-caption sfb sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="110"
-                    data-speed="1500"
-                    data-start="1000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">Start Today</a></div>
-
-                    </li>
-
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/image-2.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/main-slider/image-2.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption sft sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="-120"
-                    data-speed="1500"
-                    data-start="0"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-					data-endeasing="Power4.easeIn"><figure class="content-image"><img src="images/main-slider/content-image-1.png" alt=""></figure> </div>
-
-                    <div class="tp-caption sfb sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="60"
-                    data-speed="1500"
-                    data-start="500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h2 class="text-center">A Huge Variety of the Freshest <br> Fruits & Vegetables</h2></div>
-
-                    <div class="tp-caption sfb sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="160"
-                    data-speed="1500"
-                    data-start="1000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">SHOP NOW</a> &ensp;&ensp; <a href="#" class="theme-btn btn-style-two">KNOW MORE</a></div>
-
-                    </li>
-
-                    <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/image-3.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                    <img src="images/main-slider/image-3.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-
-                    <div class="tp-caption sft sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="-80"
-                    data-speed="1500"
-                    data-start="0"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><div class="green_text">We Grow Best Food</div></div>
-
-                    <div class="tp-caption sfb sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="20"
-                    data-speed="1500"
-                    data-start="500"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><h2 class="text-center">A Huge Variety of Freshest <br> Fruits and Vegetables</h2></div>
-
-                    <div class="tp-caption sfb sfb tp-resizeme"
-                    data-x="center" data-hoffset="0"
-                    data-y="center" data-voffset="140"
-                    data-speed="1500"
-                    data-start="1000"
-                    data-easing="easeOutExpo"
-                    data-splitin="none"
-                    data-splitout="none"
-                    data-elementdelay="0.01"
-                    data-endelementdelay="0.3"
-                    data-endspeed="1200"
-                    data-endeasing="Power4.easeIn"><a href="#" class="theme-btn btn-style-one">LEARN MORE</a></div>
-
-                    </li>
-
-                </ul>
-
-            	<div class="tp-bannertimer"></div>
-            </div>
-        </div>
-    </section>
+    <x-banners/>
     <!--End Main Slider-->
 
     <!--Welcome Section-->
