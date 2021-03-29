@@ -1,73 +1,82 @@
 <div>
-        <!--Subscribe Style One-->
-        <section class="subscribe-style-one">
-            <div class="auto-container">
-                <div class="subscribe-inner" style="background-image:url(images/background/3.jpg);">
-                    <div class="row clearfix">
-                        <div class="col-md-7 col-sm-12">
-                            <h2>Subscribe to our special offers</h2>
-                            <div class="text">Sign up today for our newsletter and receive 15% OFF on your first purchase.</div>
-                        </div>
-                        <div class="col-md-5 col-sm-12">
-                            <form method="post" action="http://wp.hostlin.com/tyumen/contact.html">
-                                <div class="form-group">
-                                    <input type="email" name="email" value="" placeholder="Type Your Email" required>
-                                    <button type="submit" class="theme-btn btn-style-one">SUBMIT</button>
+    <footer class="main-footer footer-style-two">
+    	<!--footer upper-->
+    	<div class="footer-upper">
+        	<div class="auto-container">
+                <div class="row clearfix">
+
+                	<!--big column-->
+                	<div class="big-column col-md-6 col-sm-12 col-xs-12">
+                    	<div class="row clearfix">
+
+                            <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            	<div class="footer-widget about-widget">
+                                	<div class="widget-content">
+                                    	<div class="footer-logo"><a href="index-2.html"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt="logo"></a></div>
+                                        <div class="text">{{setting(App::getLocale() . '.footer-desc')}}</div>
+                                        <ul class="social-icon-one">
+                                            @foreach ($socials as $social)
+                                                <li><a target="_blank" href="{{$social->getTranslatedAttribute('link')}}"><span class="{{$social->getTranslatedAttribute('icon')}}"></span></a></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--End Subscribe Style One-->
-
-        <!--Main Footer-->
-        <footer class="main-footer">
-            <!--footer upper-->
-            <div class="footer-upper" style="background-image:url(images/background/4.jpg);">
-                <div class="auto-container">
-                    <!--Logo Widget-->
-                    <div class="logo-widget">
-                        <div class="footer-logo"><a href="index-2.html"><img src="images/logo-2.png" alt="" /></a></div>
-                        <div class="text">Hot sauce andouille pecan pie barbed wire boucherie. Zydeco levee pirogue mirliton file make a roux etoufee pecan pie viens ci merci beaucoup.</div>
-                        <ul class="social-icon-one">
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                            <li><a href="#"><span class="fa fa-skype"></span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--End Footer Upper-->
-
-            <!--footer bottom-->
-            <div class="footer-bottom">
-                <div class="auto-container">
-                    <div class="row clearfix">
-                        <div class="column col-md-6 col-sm-12 col-xs-12">
-                            <div class="footer-nav">
-                                <ul class="clearfix">
-                                    <li class="current"><a href="#">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
                             </div>
-                        </div>
 
-                        <div class="column text-right col-md-6 col-sm-12 col-xs-12">
-                            <div class="copyright">&copy; 2017 Tyumen. All Rights Reserved</div>
-                        </div>
+                            <!--Footer Column-->
+                        	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            	<div class="footer-widget links-widget">
+                                	<h2>INFORMATION</h2>
+                                    <div class="widget-content">
+                                    	<ul class="list">
+                                            @foreach (menu('footer', '_json') as $item)
+                                                <li><a href="{{$item->url}}">{{$item->getTranslatedAttribute('title')}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
                     </div>
+
+                    <!--big column-->
+                    <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                    	<div class="row clearfix">
+
+                            <!--Footer Column-->
+
+
+                            <!--Footer Column-->
+                        	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            	<div class="footer-widget contact-widget">
+                                	<h2>Contact</h2>
+                                    <div class="widget-content">
+                                        <ul class="contact-info">
+                                        	<li><span>Address</span> {{setting(App::getLocale() . '.address')}}</li>
+                                            <li><span>Call Us</span> {{setting(App::getLocale() . '.phone')}}</li>
+                                            <li><span>Mail Us</span> {{setting('site.email')}}</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+					</div>
+
                 </div>
             </div>
-            <!--End Footer Bottom-->
+        </div>
+        <!--End Footer Upper-->
 
-        </footer>
+        <!--footer bottom-->
+        <div class="footer-bottom">
+        	<div class="auto-container">
+            	<div class="copyright">&copy; {{date("Y")}} {{config('app.name')}}. All Rights Reserved</div>
+            </div>
+        </div>
+        <!--End Footer Bottom-->
+
+    </footer>
+
 </div>

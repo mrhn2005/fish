@@ -6,12 +6,12 @@
 <meta charset="utf-8">
 <title>{{setting(App::getLocale().'.title')}}</title>
 <!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/revolution-slider.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/responsive.css" rel="stylesheet">
-<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<link href="{{asset('css/bootstrap.css')}}" rel="stylesheet">
+<link href="{{asset('css/revolution-slider.css')}}" rel="stylesheet">
+<link href="{{asset('css/style.css')}}" rel="stylesheet">
+<link href="{{asset('css/responsive.css')}}" rel="stylesheet">
+<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+<link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
 <style>
 .search-box-outer {
     border: none;
@@ -41,54 +41,31 @@
 <div class="page-wrapper">
 
     <!-- Preloader -->
-    {{-- <div class="preloader"></div> --}}
+    <div class="preloader"></div>
 
-    <!-- Main Header-->
     <x-header/>
-    <!--End Main Header -->
 
-    <!--Main Slider-->
-    <x-banners/>
-    <!--End Main Slider-->
+    @yield('content')
 
-    <!--Welcome Section-->
-    <x-welcome/>
-    <!--End Welcome Section-->
-
-    <!--Shop Banner-->
-    <x-banner-middle/>
-    <!--End Shop Banner-->
-
-    <!--Product Section-->
-    <x-category-products/>
-    <!--End product Section-->
-
-    <!--Blog Section-->
-    <x-blog/>
-    <!--End Blog Section-->
-
-    <!--Footer Section-->
     <x-footer/>
-    <!--End Footer Section-->
-
 </div>
 <!--End pagewrapper-->
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-up"></span></div>
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/revolution.min.js"></script>
-<script src="js/jquery.fancybox.pack.js"></script>
-<script src="js/jquery.fancybox-media.js"></script>
-<script src="js/owl.js"></script>
-<script src="js/wow.js"></script>
-<script src="js/appear.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/mixitup.js"></script>
-<script src="js/script.js"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+<script src="{{asset('js/revolution.min.js')}}"></script>
+<script src="{{asset('js/jquery.fancybox.pack.js')}}"></script>
+<script src="{{asset('js/jquery.fancybox-media.js')}}"></script>
+<script src="{{asset('js/owl.js')}}"></script>
+<script src="{{asset('js/wow.js')}}"></script>
+<script src="{{asset('js/appear.js')}}"></script>
+<script src="{{asset('js/isotope.js')}}"></script>
+<script src="{{asset('js/mixitup.js')}}"></script>
+<script src="{{asset('js/script.js')}}"></script>
 </body>
 
 <!-- Mirrored from wp.hostlin.com/tyumen/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Mar 2021 18:19:46 GMT -->

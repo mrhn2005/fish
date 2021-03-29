@@ -36,13 +36,16 @@ class Helper
 
     public static function placeholder($imageRelative)
     {
-        $image = Voyager::image($imageRelative);
+        if ($imageRelative) {
+            $image = Voyager::image($imageRelative);
 
-        if ($image) {
-            if (file_exists(public_path('storage') . DIRECTORY_SEPARATOR . $imageRelative)) {
-                return $image;
+            if ($image) {
+                if (file_exists(public_path('storage') . DIRECTORY_SEPARATOR . $imageRelative)) {
+                    return $image;
+                }
             }
         }
+
         return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
     }
 
