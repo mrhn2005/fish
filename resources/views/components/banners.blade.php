@@ -21,7 +21,7 @@
                         data-endelementdelay="0.3"
                         data-endspeed="1200"
                         data-endeasing="Power4.easeIn">
-                            <h2>{{$banner->getTranslatedAttribute('title')}}</h2>
+                            {!!$banner->getTranslatedAttribute('title')!!}
                         </div>
 
                         <div class="tp-caption sfb sfb tp-resizeme"

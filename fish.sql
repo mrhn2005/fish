@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : pelazio
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50731
- Source Host           : localhost:3306
+ Source Server Version : 50724
+ Source Host           : 127.0.0.1:3306
  Source Schema         : fish
 
  Target Server Type    : MySQL
- Target Server Version : 50731
+ Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 14/03/2021 18:18:28
+ Date: 28/03/2021 19:49:03
 */
 
 SET NAMES utf8mb4;
@@ -31,11 +31,12 @@ CREATE TABLE `banners`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `position` mediumint(9) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of banners
 -- ----------------------------
+INSERT INTO `banners` VALUES (1, 'Organic Fruit, Vegetables and Meat', 'shop now', NULL, 'banners\\March2021\\3pErfPbBCpENhdVF2omR.jpg', '2021-03-27 19:58:44', '2021-03-27 20:26:13', 1);
 
 -- ----------------------------
 -- Table structure for categories
@@ -49,6 +50,7 @@ CREATE TABLE `categories`  (
   `slug` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `position` int(11) NULL DEFAULT 1,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `categories_slug_unique`(`slug`) USING BTREE,
   INDEX `categories_parent_id_foreign`(`parent_id`) USING BTREE,
@@ -58,8 +60,8 @@ CREATE TABLE `categories`  (
 -- ----------------------------
 -- Records of categories
 -- ----------------------------
-INSERT INTO `categories` VALUES (1, NULL, 1, 'Category 1', 'category-1', '2021-03-14 08:26:22', '2021-03-14 08:26:22');
-INSERT INTO `categories` VALUES (2, NULL, 1, 'Category 2', 'category-2', '2021-03-14 08:26:22', '2021-03-14 08:26:22');
+INSERT INTO `categories` VALUES (1, NULL, 1, 'Category 1', 'category-1', '2021-03-14 08:26:22', '2021-03-14 08:26:22', 1);
+INSERT INTO `categories` VALUES (2, NULL, 1, 'Category 2', 'category-2', '2021-03-14 08:26:22', '2021-03-14 08:26:22', 1);
 
 -- ----------------------------
 -- Table structure for data_rows
@@ -82,7 +84,7 @@ CREATE TABLE `data_rows`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `data_rows_data_type_id_foreign`(`data_type_id`) USING BTREE,
   CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 80 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of data_rows
@@ -108,13 +110,13 @@ INSERT INTO `data_rows` VALUES (18, 3, 'created_at', 'timestamp', 'Created At', 
 INSERT INTO `data_rows` VALUES (19, 3, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 4);
 INSERT INTO `data_rows` VALUES (20, 3, 'display_name', 'text', 'Display Name', 1, 1, 1, 1, 1, 1, NULL, 5);
 INSERT INTO `data_rows` VALUES (21, 1, 'role_id', 'text', 'Role', 1, 1, 1, 1, 1, 1, NULL, 9);
-INSERT INTO `data_rows` VALUES (22, 4, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1);
+INSERT INTO `data_rows` VALUES (22, 4, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, '{}', 1);
 INSERT INTO `data_rows` VALUES (23, 4, 'parent_id', 'select_dropdown', 'Parent', 0, 0, 1, 1, 1, 1, '{\"default\":\"\",\"null\":\"\",\"options\":{\"\":\"-- None --\"},\"relationship\":{\"key\":\"id\",\"label\":\"name\"}}', 2);
 INSERT INTO `data_rows` VALUES (24, 4, 'order', 'text', 'Order', 1, 1, 1, 1, 1, 1, '{\"default\":1}', 3);
-INSERT INTO `data_rows` VALUES (25, 4, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, NULL, 4);
+INSERT INTO `data_rows` VALUES (25, 4, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{}', 4);
 INSERT INTO `data_rows` VALUES (26, 4, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name\"}}', 5);
-INSERT INTO `data_rows` VALUES (27, 4, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, NULL, 6);
-INSERT INTO `data_rows` VALUES (28, 4, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 7);
+INSERT INTO `data_rows` VALUES (27, 4, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 7);
+INSERT INTO `data_rows` VALUES (28, 4, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
 INSERT INTO `data_rows` VALUES (29, 5, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1);
 INSERT INTO `data_rows` VALUES (30, 5, 'author_id', 'text', 'Author', 1, 0, 1, 1, 0, 1, NULL, 2);
 INSERT INTO `data_rows` VALUES (31, 5, 'category_id', 'text', 'Category', 1, 0, 1, 1, 1, 0, NULL, 3);
@@ -166,6 +168,22 @@ INSERT INTO `data_rows` VALUES (76, 11, 'product_belongsto_category_relationship
 INSERT INTO `data_rows` VALUES (77, 11, 'product_belongstomany_feature_option_relationship', 'relationship', 'Options', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\FeatureOption\",\"table\":\"feature_options\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"value\",\"pivot_table\":\"option_product\",\"pivot\":\"1\",\"taggable\":\"on\"}', 9);
 INSERT INTO `data_rows` VALUES (78, 7, 'feature_hasmany_feature_option_relationship', 'relationship', 'options', 0, 1, 1, 1, 0, 1, '{\"model\":\"App\\\\Models\\\\FeatureOption\",\"table\":\"feature_options\",\"type\":\"hasMany\",\"column\":\"feature_id\",\"key\":\"id\",\"label\":\"value\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3);
 INSERT INTO `data_rows` VALUES (79, 11, 'is_featured', 'checkbox', 'Is Featured', 0, 1, 1, 1, 1, 1, 'null', 10);
+INSERT INTO `data_rows` VALUES (80, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
+INSERT INTO `data_rows` VALUES (81, 12, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:100\"}}', 2);
+INSERT INTO `data_rows` VALUES (82, 12, 'link', 'text', 'Link', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:150|url\"}}', 3);
+INSERT INTO `data_rows` VALUES (83, 12, 'position', 'number', 'Position', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 4);
+INSERT INTO `data_rows` VALUES (84, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5);
+INSERT INTO `data_rows` VALUES (85, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6);
+INSERT INTO `data_rows` VALUES (86, 13, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
+INSERT INTO `data_rows` VALUES (87, 13, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:100\"}}', 2);
+INSERT INTO `data_rows` VALUES (88, 13, 'subtitle', 'text', 'Subtitle', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:100\"}}', 3);
+INSERT INTO `data_rows` VALUES (89, 13, 'url', 'text', 'Url', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:150\"}}', 4);
+INSERT INTO `data_rows` VALUES (90, 13, 'photo', 'image', 'Photo', 0, 1, 1, 1, 1, 1, '{\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 5);
+INSERT INTO `data_rows` VALUES (91, 13, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 7);
+INSERT INTO `data_rows` VALUES (92, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
+INSERT INTO `data_rows` VALUES (93, 13, 'position', 'number', 'Position', 0, 0, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 6);
+INSERT INTO `data_rows` VALUES (94, 4, 'position', 'number', 'Position', 0, 1, 1, 1, 1, 1, '{\"default\":1,\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 6);
+INSERT INTO `data_rows` VALUES (95, 7, 'position', 'text', 'Position', 0, 1, 1, 1, 1, 1, '{}', 5);
 
 -- ----------------------------
 -- Table structure for data_types
@@ -190,7 +208,7 @@ CREATE TABLE `data_types`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `data_types_name_unique`(`name`) USING BTREE,
   UNIQUE INDEX `data_types_slug_unique`(`slug`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of data_types
@@ -198,12 +216,14 @@ CREATE TABLE `data_types`  (
 INSERT INTO `data_types` VALUES (1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', '', 1, 0, NULL, '2021-03-14 08:26:21', '2021-03-14 08:26:21');
 INSERT INTO `data_types` VALUES (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2021-03-14 08:26:21', '2021-03-14 08:26:21');
 INSERT INTO `data_types` VALUES (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2021-03-14 08:26:21', '2021-03-14 08:26:21');
-INSERT INTO `data_types` VALUES (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, '', '', 1, 0, NULL, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
+INSERT INTO `data_types` VALUES (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"name\",\"order_direction\":\"desc\",\"default_search_key\":\"name\",\"scope\":null}', '2021-03-14 08:26:22', '2021-03-27 07:57:19');
 INSERT INTO `data_types` VALUES (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
 INSERT INTO `data_types` VALUES (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
-INSERT INTO `data_types` VALUES (7, 'features', 'features', 'Feature', 'Features', 'voyager-params', 'App\\Models\\Feature', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"created_at\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-14 08:49:15', '2021-03-14 10:21:55');
+INSERT INTO `data_types` VALUES (7, 'features', 'features', 'Feature', 'Features', 'voyager-params', 'App\\Models\\Feature', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-14 08:49:15', '2021-03-27 07:57:32');
 INSERT INTO `data_types` VALUES (9, 'feature_options', 'feature-options', 'Feature Option', 'Feature Options', 'voyager-list', 'App\\Models\\FeatureOption', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"created_at\",\"order_display_column\":\"value\",\"order_direction\":\"desc\",\"default_search_key\":\"value\",\"scope\":null}', '2021-03-14 08:59:13', '2021-03-14 09:19:23');
 INSERT INTO `data_types` VALUES (11, 'products', 'products', 'Product', 'Products', 'voyager-basket', 'App\\Models\\Product', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-03-14 09:46:34', '2021-03-14 10:40:20');
+INSERT INTO `data_types` VALUES (12, 'socials', 'socials', 'Social', 'Socials', 'voyager-world', 'App\\Models\\Social', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-27 07:40:08', '2021-03-27 07:47:10');
+INSERT INTO `data_types` VALUES (13, 'banners', 'banners', 'Banner', 'Banners', 'voyager-images', 'App\\Models\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-27 07:46:36', '2021-03-27 20:25:59');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -220,10 +240,6 @@ CREATE TABLE `failed_jobs`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `failed_jobs_uuid_unique`(`uuid`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of failed_jobs
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for feature_options
@@ -283,7 +299,7 @@ CREATE TABLE `menu_items`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `menu_items_menu_id_foreign`(`menu_id`) USING BTREE,
   CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu_items
@@ -305,6 +321,13 @@ INSERT INTO `menu_items` VALUES (14, 1, 'Hooks', '', '_self', 'voyager-hook', NU
 INSERT INTO `menu_items` VALUES (15, 1, 'Features', '', '_self', 'voyager-params', NULL, NULL, 15, '2021-03-14 08:49:15', '2021-03-14 08:49:15', 'voyager.features.index', NULL);
 INSERT INTO `menu_items` VALUES (16, 1, 'Feature Options', '', '_self', 'voyager-list', NULL, NULL, 16, '2021-03-14 08:59:13', '2021-03-14 08:59:13', 'voyager.feature-options.index', NULL);
 INSERT INTO `menu_items` VALUES (17, 1, 'Products', '', '_self', 'voyager-basket', NULL, NULL, 17, '2021-03-14 09:46:34', '2021-03-14 09:46:34', 'voyager.products.index', NULL);
+INSERT INTO `menu_items` VALUES (18, 1, 'Socials', '', '_self', 'voyager-world', NULL, NULL, 18, '2021-03-27 07:40:08', '2021-03-27 07:40:08', 'voyager.socials.index', NULL);
+INSERT INTO `menu_items` VALUES (19, 1, 'Banners', '', '_self', 'voyager-images', NULL, NULL, 19, '2021-03-27 07:46:36', '2021-03-27 07:46:36', 'voyager.banners.index', NULL);
+INSERT INTO `menu_items` VALUES (20, 2, 'محصولات', '', '_self', NULL, '#000000', NULL, 1, '2021-03-27 12:04:01', '2021-03-27 12:04:45', NULL, '');
+INSERT INTO `menu_items` VALUES (21, 2, 'ماهی', '', '_self', NULL, '#000000', 20, 1, '2021-03-27 12:04:41', '2021-03-27 12:04:45', NULL, '');
+INSERT INTO `menu_items` VALUES (23, 2, 'درباره ما', '', '_self', NULL, '#000000', NULL, 2, '2021-03-27 12:05:55', '2021-03-27 12:06:28', NULL, '');
+INSERT INTO `menu_items` VALUES (24, 2, 'درباره ما', '', '_self', NULL, '#000000', 23, 1, '2021-03-27 12:06:24', '2021-03-27 12:06:30', NULL, '');
+INSERT INTO `menu_items` VALUES (25, 2, 'تماس با ما', '', '_self', NULL, '#000000', 23, 2, '2021-03-27 12:06:53', '2021-03-27 12:07:04', NULL, '');
 
 -- ----------------------------
 -- Table structure for menus
@@ -317,12 +340,13 @@ CREATE TABLE `menus`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `menus_name_unique`(`name`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menus
 -- ----------------------------
 INSERT INTO `menus` VALUES (1, 'admin', '2021-03-14 08:26:21', '2021-03-14 08:26:21');
+INSERT INTO `menus` VALUES (2, 'header', '2021-03-27 12:02:33', '2021-03-27 12:02:33');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -380,10 +404,6 @@ CREATE TABLE `option_product`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of option_product
--- ----------------------------
-
--- ----------------------------
 -- Table structure for pages
 -- ----------------------------
 DROP TABLE IF EXISTS `pages`;
@@ -419,10 +439,6 @@ CREATE TABLE `password_resets`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   INDEX `password_resets_email_index`(`email`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of password_resets
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for permission_role
@@ -496,6 +512,16 @@ INSERT INTO `permission_role` VALUES (53, 1);
 INSERT INTO `permission_role` VALUES (54, 1);
 INSERT INTO `permission_role` VALUES (55, 1);
 INSERT INTO `permission_role` VALUES (56, 1);
+INSERT INTO `permission_role` VALUES (57, 1);
+INSERT INTO `permission_role` VALUES (58, 1);
+INSERT INTO `permission_role` VALUES (59, 1);
+INSERT INTO `permission_role` VALUES (60, 1);
+INSERT INTO `permission_role` VALUES (61, 1);
+INSERT INTO `permission_role` VALUES (62, 1);
+INSERT INTO `permission_role` VALUES (63, 1);
+INSERT INTO `permission_role` VALUES (64, 1);
+INSERT INTO `permission_role` VALUES (65, 1);
+INSERT INTO `permission_role` VALUES (66, 1);
 
 -- ----------------------------
 -- Table structure for permissions
@@ -509,7 +535,7 @@ CREATE TABLE `permissions`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `permissions_key_index`(`key`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 57 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 67 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of permissions
@@ -570,6 +596,16 @@ INSERT INTO `permissions` VALUES (53, 'read_products', 'products', '2021-03-14 0
 INSERT INTO `permissions` VALUES (54, 'edit_products', 'products', '2021-03-14 09:46:34', '2021-03-14 09:46:34');
 INSERT INTO `permissions` VALUES (55, 'add_products', 'products', '2021-03-14 09:46:34', '2021-03-14 09:46:34');
 INSERT INTO `permissions` VALUES (56, 'delete_products', 'products', '2021-03-14 09:46:34', '2021-03-14 09:46:34');
+INSERT INTO `permissions` VALUES (57, 'browse_socials', 'socials', '2021-03-27 07:40:08', '2021-03-27 07:40:08');
+INSERT INTO `permissions` VALUES (58, 'read_socials', 'socials', '2021-03-27 07:40:08', '2021-03-27 07:40:08');
+INSERT INTO `permissions` VALUES (59, 'edit_socials', 'socials', '2021-03-27 07:40:08', '2021-03-27 07:40:08');
+INSERT INTO `permissions` VALUES (60, 'add_socials', 'socials', '2021-03-27 07:40:08', '2021-03-27 07:40:08');
+INSERT INTO `permissions` VALUES (61, 'delete_socials', 'socials', '2021-03-27 07:40:08', '2021-03-27 07:40:08');
+INSERT INTO `permissions` VALUES (62, 'browse_banners', 'banners', '2021-03-27 07:46:36', '2021-03-27 07:46:36');
+INSERT INTO `permissions` VALUES (63, 'read_banners', 'banners', '2021-03-27 07:46:36', '2021-03-27 07:46:36');
+INSERT INTO `permissions` VALUES (64, 'edit_banners', 'banners', '2021-03-27 07:46:36', '2021-03-27 07:46:36');
+INSERT INTO `permissions` VALUES (65, 'add_banners', 'banners', '2021-03-27 07:46:36', '2021-03-27 07:46:36');
+INSERT INTO `permissions` VALUES (66, 'delete_banners', 'banners', '2021-03-27 07:46:36', '2021-03-27 07:46:36');
 
 -- ----------------------------
 -- Table structure for posts
@@ -624,10 +660,6 @@ CREATE TABLE `products`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
--- Records of products
--- ----------------------------
-
--- ----------------------------
 -- Table structure for roles
 -- ----------------------------
 DROP TABLE IF EXISTS `roles`;
@@ -669,14 +701,28 @@ CREATE TABLE `settings`  (
 -- ----------------------------
 INSERT INTO `settings` VALUES (1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site');
 INSERT INTO `settings` VALUES (2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site');
-INSERT INTO `settings` VALUES (3, 'site.logo', 'Site Logo', '', '', 'image', 3, 'Site');
-INSERT INTO `settings` VALUES (4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', '', '', 'text', 4, 'Site');
+INSERT INTO `settings` VALUES (3, 'site.logo', 'Site Logo', 'settings\\March2021\\B6cjmMLmk9c3hWfVuhHa.png', '', 'image', 3, 'Site');
+INSERT INTO `settings` VALUES (4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site');
 INSERT INTO `settings` VALUES (5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin');
 INSERT INTO `settings` VALUES (6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin');
 INSERT INTO `settings` VALUES (7, 'admin.description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 2, 'Admin');
 INSERT INTO `settings` VALUES (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin');
 INSERT INTO `settings` VALUES (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin');
-INSERT INTO `settings` VALUES (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+INSERT INTO `settings` VALUES (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
+
+-- ----------------------------
+-- Table structure for socials
+-- ----------------------------
+DROP TABLE IF EXISTS `socials`;
+CREATE TABLE `socials`  (
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `position` int(10) UNSIGNED NULL DEFAULT 1,
+  `created_at` timestamp(0) NULL DEFAULT NULL,
+  `updated_at` timestamp(0) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for translations
@@ -693,7 +739,7 @@ CREATE TABLE `translations`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `translations_table_name_column_name_foreign_key_locale_unique`(`table_name`, `column_name`, `foreign_key`, `locale`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 121 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 201 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of translations
@@ -818,6 +864,85 @@ INSERT INTO `translations` VALUES (117, 'data_types', 'display_name_singular', 7
 INSERT INTO `translations` VALUES (118, 'data_types', 'display_name_singular', 7, 'ru', 'Feature', '2021-03-14 10:21:55', '2021-03-14 10:21:55');
 INSERT INTO `translations` VALUES (119, 'data_types', 'display_name_plural', 7, 'tr', 'Features', '2021-03-14 10:21:55', '2021-03-14 10:21:55');
 INSERT INTO `translations` VALUES (120, 'data_types', 'display_name_plural', 7, 'ru', 'Features', '2021-03-14 10:21:55', '2021-03-14 10:21:55');
+INSERT INTO `translations` VALUES (121, 'data_rows', 'display_name', 80, 'en', 'Id', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (122, 'data_rows', 'display_name', 81, 'en', 'Title', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (123, 'data_rows', 'display_name', 82, 'en', 'Link', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (124, 'data_rows', 'display_name', 83, 'en', 'Position', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (125, 'data_rows', 'display_name', 84, 'en', 'Created At', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (126, 'data_rows', 'display_name', 85, 'en', 'Updated At', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (127, 'data_types', 'display_name_singular', 12, 'en', 'Social', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (128, 'data_types', 'display_name_plural', 12, 'en', 'Socials', '2021-03-27 07:47:10', '2021-03-27 07:47:10');
+INSERT INTO `translations` VALUES (129, 'data_rows', 'display_name', 86, 'en', 'Id', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (130, 'data_rows', 'display_name', 87, 'en', 'Title', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (131, 'data_rows', 'display_name', 88, 'en', 'Subtitle', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (132, 'data_rows', 'display_name', 89, 'en', 'Url', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (133, 'data_rows', 'display_name', 90, 'en', 'Photo', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (134, 'data_rows', 'display_name', 91, 'en', 'Created At', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (135, 'data_rows', 'display_name', 92, 'en', 'Updated At', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (136, 'data_rows', 'display_name', 93, 'en', 'Position', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (137, 'data_types', 'display_name_singular', 13, 'en', 'Banner', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (138, 'data_types', 'display_name_plural', 13, 'en', 'Banners', '2021-03-27 07:47:22', '2021-03-27 07:47:22');
+INSERT INTO `translations` VALUES (139, 'data_rows', 'display_name', 22, 'en', 'ID', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (140, 'data_rows', 'display_name', 23, 'en', 'Parent', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (141, 'data_rows', 'display_name', 24, 'en', 'Order', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (142, 'data_rows', 'display_name', 25, 'en', 'Name', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (143, 'data_rows', 'display_name', 26, 'en', 'Slug', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (144, 'data_rows', 'display_name', 27, 'en', 'Created At', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (145, 'data_rows', 'display_name', 28, 'en', 'Updated At', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (146, 'data_types', 'display_name_singular', 4, 'en', 'Category', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (147, 'data_types', 'display_name_plural', 4, 'en', 'Categories', '2021-03-27 07:54:01', '2021-03-27 07:54:01');
+INSERT INTO `translations` VALUES (148, 'data_rows', 'display_name', 22, 'tr', 'ID', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (149, 'data_rows', 'display_name', 22, 'ru', 'ID', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (150, 'data_rows', 'display_name', 23, 'tr', 'Parent', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (151, 'data_rows', 'display_name', 23, 'ru', 'Parent', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (152, 'data_rows', 'display_name', 24, 'tr', 'Order', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (153, 'data_rows', 'display_name', 24, 'ru', 'Order', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (154, 'data_rows', 'display_name', 25, 'tr', 'Name', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (155, 'data_rows', 'display_name', 25, 'ru', 'Name', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (156, 'data_rows', 'display_name', 26, 'tr', 'Slug', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (157, 'data_rows', 'display_name', 26, 'ru', 'Slug', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (158, 'data_rows', 'display_name', 27, 'tr', 'Created At', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (159, 'data_rows', 'display_name', 27, 'ru', 'Created At', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (160, 'data_rows', 'display_name', 28, 'tr', 'Updated At', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (161, 'data_rows', 'display_name', 28, 'ru', 'Updated At', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (162, 'data_rows', 'display_name', 94, 'en', 'Position', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (163, 'data_types', 'display_name_singular', 4, 'tr', 'Category', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (164, 'data_types', 'display_name_singular', 4, 'ru', 'Category', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (165, 'data_types', 'display_name_plural', 4, 'tr', 'Categories', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (166, 'data_types', 'display_name_plural', 4, 'ru', 'Categories', '2021-03-27 07:54:42', '2021-03-27 07:54:42');
+INSERT INTO `translations` VALUES (167, 'data_rows', 'display_name', 94, 'tr', 'Position', '2021-03-27 07:56:08', '2021-03-27 07:56:08');
+INSERT INTO `translations` VALUES (168, 'data_rows', 'display_name', 94, 'ru', 'Position', '2021-03-27 07:56:08', '2021-03-27 07:56:08');
+INSERT INTO `translations` VALUES (169, 'data_rows', 'display_name', 86, 'tr', 'Id', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (170, 'data_rows', 'display_name', 86, 'ru', 'Id', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (171, 'data_rows', 'display_name', 87, 'tr', 'Title', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (172, 'data_rows', 'display_name', 87, 'ru', 'Title', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (173, 'data_rows', 'display_name', 88, 'tr', 'Subtitle', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (174, 'data_rows', 'display_name', 88, 'ru', 'Subtitle', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (175, 'data_rows', 'display_name', 89, 'tr', 'Url', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (176, 'data_rows', 'display_name', 89, 'ru', 'Url', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (177, 'data_rows', 'display_name', 90, 'tr', 'Photo', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (178, 'data_rows', 'display_name', 90, 'ru', 'Photo', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (179, 'data_rows', 'display_name', 91, 'tr', 'Created At', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (180, 'data_rows', 'display_name', 91, 'ru', 'Created At', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (181, 'data_rows', 'display_name', 92, 'tr', 'Updated At', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (182, 'data_rows', 'display_name', 92, 'ru', 'Updated At', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (183, 'data_rows', 'display_name', 93, 'tr', 'Position', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (184, 'data_rows', 'display_name', 93, 'ru', 'Position', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (185, 'data_types', 'display_name_singular', 13, 'tr', 'Banner', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (186, 'data_types', 'display_name_singular', 13, 'ru', 'Banner', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (187, 'data_types', 'display_name_plural', 13, 'tr', 'Banners', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (188, 'data_types', 'display_name_plural', 13, 'ru', 'Banners', '2021-03-27 07:57:05', '2021-03-27 07:57:05');
+INSERT INTO `translations` VALUES (189, 'menu_items', 'title', 20, 'en', 'Products', '2021-03-27 12:04:01', '2021-03-27 12:04:01');
+INSERT INTO `translations` VALUES (190, 'menu_items', 'title', 21, 'en', 'fish', '2021-03-27 12:04:41', '2021-03-27 12:04:41');
+INSERT INTO `translations` VALUES (192, 'menu_items', 'title', 23, 'en', 'about us', '2021-03-27 12:05:55', '2021-03-27 12:05:55');
+INSERT INTO `translations` VALUES (193, 'menu_items', 'title', 24, 'en', 'who we are', '2021-03-27 12:06:24', '2021-03-27 12:06:24');
+INSERT INTO `translations` VALUES (194, 'menu_items', 'title', 25, 'en', 'contact us', '2021-03-27 12:06:53', '2021-03-27 12:06:53');
+INSERT INTO `translations` VALUES (195, 'banners', 'title', 1, 'en', 'Organic Fruit, Vegetables and Meat', '2021-03-27 20:25:04', '2021-03-27 20:25:04');
+INSERT INTO `translations` VALUES (196, 'banners', 'subtitle', 1, 'en', 'shop now', '2021-03-27 20:25:04', '2021-03-27 20:25:04');
+INSERT INTO `translations` VALUES (197, 'banners', 'title', 1, 'tr', 'Organic Fruit, Vegetables and Meat', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
+INSERT INTO `translations` VALUES (198, 'banners', 'title', 1, 'ru', 'Organic Fruit, Vegetables and Meat', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
+INSERT INTO `translations` VALUES (199, 'banners', 'subtitle', 1, 'tr', 'shop now', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
+INSERT INTO `translations` VALUES (200, 'banners', 'subtitle', 1, 'ru', 'shop now', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
 
 -- ----------------------------
 -- Table structure for user_roles
@@ -832,10 +957,6 @@ CREATE TABLE `user_roles`  (
   CONSTRAINT `user_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `user_roles_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of user_roles
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for users

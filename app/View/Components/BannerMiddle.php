@@ -5,7 +5,7 @@ namespace App\View\Components;
 use App\Models\Banner;
 use Illuminate\View\Component;
 
-class Banners extends Component
+class BannerMiddle extends Component
 {
     /**
      * Create a new component instance.
@@ -14,6 +14,7 @@ class Banners extends Component
      */
     public function __construct()
     {
+        //
     }
 
     /**
@@ -23,8 +24,8 @@ class Banners extends Component
      */
     public function render()
     {
-        $banners = Banner::where('location', 'top')->orderBy('position')->limit(3)->get();
+        $banner = Banner::where('location', 'middle')->orderBy('position')->first();
 
-        return view('components.banners', compact('banners'));
+        return view('components.banner-middle', compact('banner'));
     }
 }

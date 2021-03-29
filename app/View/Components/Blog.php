@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Banner;
+use App\Models\Post;
 use Illuminate\View\Component;
 
-class Banners extends Component
+class Blog extends Component
 {
     /**
      * Create a new component instance.
@@ -14,6 +14,7 @@ class Banners extends Component
      */
     public function __construct()
     {
+        //
     }
 
     /**
@@ -23,8 +24,10 @@ class Banners extends Component
      */
     public function render()
     {
-        $banners = Banner::where('location', 'top')->orderBy('position')->limit(3)->get();
+        $posts = Post::where('status', 'published')->latest('id')->limit(3)->withTranslation(app()->getLocale())->with('category.translations')->get();
+        $firstPost = $posts->first();
+        $posts = $posts->forget(0);
 
-        return view('components.banners', compact('banners'));
+        return view('components.blog', compact('posts', 'firstPost'));
     }
 }

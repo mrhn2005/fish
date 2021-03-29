@@ -3,7 +3,7 @@
 namespace App\Helpers;
 
 use App;
-
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category as Category;
@@ -37,12 +37,27 @@ class Helper
     public static function placeholder($imageRelative)
     {
         $image = Voyager::image($imageRelative);
+
         if ($image) {
             if (file_exists(public_path('storage') . DIRECTORY_SEPARATOR . $imageRelative)) {
                 return $image;
             }
         }
-        return 'https://via.placeholder.com/300x300.png?text=MedTourIran';
+        return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+    }
+
+    public static function getThumbnail(Model $model, string $size): string
+    {
+        if (count($model->decodedPhotos)) {
+            return Voyager::image($model->getThumbnail($model->decodedPhotos[0], $size));
+        }
+
+        return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+    }
+
+    public static function getThumbnailSingle(Model $model, string $size): string
+    {
+        return Voyager::image($model->thumbnail($size, 'image'));
     }
 
 

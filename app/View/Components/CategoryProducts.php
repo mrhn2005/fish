@@ -2,10 +2,10 @@
 
 namespace App\View\Components;
 
-use App\Models\Banner;
+use App\Models\Category;
 use Illuminate\View\Component;
 
-class Banners extends Component
+class CategoryProducts extends Component
 {
     /**
      * Create a new component instance.
@@ -14,6 +14,7 @@ class Banners extends Component
      */
     public function __construct()
     {
+        //
     }
 
     /**
@@ -23,8 +24,12 @@ class Banners extends Component
      */
     public function render()
     {
-        $banners = Banner::where('location', 'top')->orderBy('position')->limit(3)->get();
+        $categories = Category::with([
+            'products' => function ($query) {
+                $query->limit(6);
+            }
+        ])->limit(7)->get();
 
-        return view('components.banners', compact('banners'));
+        return view('components.category-products', compact('categories'));
     }
 }
