@@ -3,15 +3,15 @@
 
  Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 50724
+ Source Server Version : 50729
  Source Host           : 127.0.0.1:3306
  Source Schema         : fish
 
  Target Server Type    : MySQL
- Target Server Version : 50724
+ Target Server Version : 50729
  File Encoding         : 65001
 
- Date: 28/03/2021 19:49:03
+ Date: 03/04/2021 00:22:06
 */
 
 SET NAMES utf8mb4;
@@ -23,20 +23,22 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `banners`;
 CREATE TABLE `banners`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `subtitle` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `photo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `position` mediumint(9) NULL DEFAULT 1,
+  `location` varchar(80) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of banners
 -- ----------------------------
-INSERT INTO `banners` VALUES (1, 'Organic Fruit, Vegetables and Meat', 'shop now', NULL, 'banners\\March2021\\3pErfPbBCpENhdVF2omR.jpg', '2021-03-27 19:58:44', '2021-03-27 20:26:13', 1);
+INSERT INTO `banners` VALUES (1, '<h2>Organic Fruit, Vegetables and Meat</h2>', 'shop now', NULL, 'banners/March2021/sHxvqL7gqi2zJT2NglGx.jpg', '2021-03-27 19:58:44', '2021-03-29 07:39:04', 1, 'top');
+INSERT INTO `banners` VALUES (2, '<h3>Unlock your potential <br />with good nutrition</h3>\n<div class=\"sale-percent\">Sale! Upto50% off</div>', 'shop now', NULL, 'banners/March2021/OnKU5gwC5G1J1WwJueiu.jpg', '2021-03-29 07:03:01', '2021-03-29 07:34:48', 1, 'middle');
 
 -- ----------------------------
 -- Table structure for categories
@@ -84,7 +86,7 @@ CREATE TABLE `data_rows`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `data_rows_data_type_id_foreign`(`data_type_id`) USING BTREE,
   CONSTRAINT `data_rows_data_type_id_foreign` FOREIGN KEY (`data_type_id`) REFERENCES `data_types` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE = InnoDB AUTO_INCREMENT = 96 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 99 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of data_rows
@@ -117,21 +119,21 @@ INSERT INTO `data_rows` VALUES (25, 4, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1,
 INSERT INTO `data_rows` VALUES (26, 4, 'slug', 'text', 'Slug', 1, 1, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"name\"}}', 5);
 INSERT INTO `data_rows` VALUES (27, 4, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 7);
 INSERT INTO `data_rows` VALUES (28, 4, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
-INSERT INTO `data_rows` VALUES (29, 5, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1);
-INSERT INTO `data_rows` VALUES (30, 5, 'author_id', 'text', 'Author', 1, 0, 1, 1, 0, 1, NULL, 2);
-INSERT INTO `data_rows` VALUES (31, 5, 'category_id', 'text', 'Category', 1, 0, 1, 1, 1, 0, NULL, 3);
-INSERT INTO `data_rows` VALUES (32, 5, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, NULL, 4);
-INSERT INTO `data_rows` VALUES (33, 5, 'excerpt', 'text_area', 'Excerpt', 1, 0, 1, 1, 1, 1, NULL, 5);
-INSERT INTO `data_rows` VALUES (34, 5, 'body', 'rich_text_box', 'Body', 1, 0, 1, 1, 1, 1, NULL, 6);
-INSERT INTO `data_rows` VALUES (35, 5, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7);
+INSERT INTO `data_rows` VALUES (29, 5, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, '{}', 1);
+INSERT INTO `data_rows` VALUES (30, 5, 'author_id', 'text', 'Author', 1, 0, 1, 1, 0, 1, '{}', 2);
+INSERT INTO `data_rows` VALUES (31, 5, 'category_id', 'text', 'Category', 0, 0, 1, 1, 1, 0, '{}', 3);
+INSERT INTO `data_rows` VALUES (32, 5, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{}', 4);
+INSERT INTO `data_rows` VALUES (33, 5, 'excerpt', 'text_area', 'Excerpt', 0, 0, 1, 1, 1, 1, '{}', 5);
+INSERT INTO `data_rows` VALUES (34, 5, 'body', 'rich_text_box', 'Body', 1, 0, 1, 1, 1, 1, '{}', 6);
+INSERT INTO `data_rows` VALUES (35, 5, 'image', 'image', 'Post Image', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\",\"height\":\"null\"},\"quality\":\"80%\",\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7);
 INSERT INTO `data_rows` VALUES (36, 5, 'slug', 'text', 'Slug', 1, 0, 1, 1, 1, 1, '{\"slugify\":{\"origin\":\"title\",\"forceUpdate\":true},\"validation\":{\"rule\":\"unique:posts,slug\"}}', 8);
-INSERT INTO `data_rows` VALUES (37, 5, 'meta_description', 'text_area', 'Meta Description', 1, 0, 1, 1, 1, 1, NULL, 9);
-INSERT INTO `data_rows` VALUES (38, 5, 'meta_keywords', 'text_area', 'Meta Keywords', 1, 0, 1, 1, 1, 1, NULL, 10);
+INSERT INTO `data_rows` VALUES (37, 5, 'meta_description', 'text_area', 'Meta Description', 0, 0, 1, 1, 1, 1, '{}', 9);
+INSERT INTO `data_rows` VALUES (38, 5, 'meta_keywords', 'text_area', 'Meta Keywords', 0, 0, 1, 1, 1, 1, '{}', 10);
 INSERT INTO `data_rows` VALUES (39, 5, 'status', 'select_dropdown', 'Status', 1, 1, 1, 1, 1, 1, '{\"default\":\"DRAFT\",\"options\":{\"PUBLISHED\":\"published\",\"DRAFT\":\"draft\",\"PENDING\":\"pending\"}}', 11);
-INSERT INTO `data_rows` VALUES (40, 5, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 0, 0, 0, NULL, 12);
-INSERT INTO `data_rows` VALUES (41, 5, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, NULL, 13);
-INSERT INTO `data_rows` VALUES (42, 5, 'seo_title', 'text', 'SEO Title', 0, 1, 1, 1, 1, 1, NULL, 14);
-INSERT INTO `data_rows` VALUES (43, 5, 'featured', 'checkbox', 'Featured', 1, 1, 1, 1, 1, 1, NULL, 15);
+INSERT INTO `data_rows` VALUES (40, 5, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 0, 0, 0, '{}', 12);
+INSERT INTO `data_rows` VALUES (41, 5, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 13);
+INSERT INTO `data_rows` VALUES (42, 5, 'seo_title', 'text', 'SEO Title', 0, 1, 1, 1, 1, 1, '{}', 14);
+INSERT INTO `data_rows` VALUES (43, 5, 'featured', 'checkbox', 'Featured', 1, 1, 1, 1, 1, 1, '{}', 15);
 INSERT INTO `data_rows` VALUES (44, 6, 'id', 'number', 'ID', 1, 0, 0, 0, 0, 0, NULL, 1);
 INSERT INTO `data_rows` VALUES (45, 6, 'author_id', 'text', 'Author', 1, 0, 0, 0, 0, 0, NULL, 2);
 INSERT INTO `data_rows` VALUES (46, 6, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, NULL, 3);
@@ -156,34 +158,37 @@ INSERT INTO `data_rows` VALUES (64, 9, 'feature_id', 'text', 'Feature Id', 0, 1,
 INSERT INTO `data_rows` VALUES (65, 9, 'feature_option_belongsto_feature_relationship', 'relationship', 'features', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Feature\",\"table\":\"features\",\"type\":\"belongsTo\",\"column\":\"feature_id\",\"key\":\"id\",\"label\":\"title\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3);
 INSERT INTO `data_rows` VALUES (66, 11, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
 INSERT INTO `data_rows` VALUES (67, 11, 'name', 'text', 'Name', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:100\"}}', 2);
-INSERT INTO `data_rows` VALUES (68, 11, 'scientific_name', 'text', 'Scientific Name', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:100\"}}', 3);
-INSERT INTO `data_rows` VALUES (69, 11, 'description', 'rich_text_box', 'Description', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:30000\"}}', 4);
-INSERT INTO `data_rows` VALUES (70, 11, 'photos', 'multiple_images', 'Photos', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 5);
-INSERT INTO `data_rows` VALUES (71, 11, 'nutrition_photo', 'image', 'Nutrition Photo', 0, 1, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\"},\"quality\":\"70%\",\"upsize\":true,\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 6);
-INSERT INTO `data_rows` VALUES (72, 11, 'category_id', 'text', 'Category Id', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|numeric\"}}', 7);
-INSERT INTO `data_rows` VALUES (73, 11, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 11);
-INSERT INTO `data_rows` VALUES (74, 11, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 12);
-INSERT INTO `data_rows` VALUES (75, 11, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, '{}', 13);
-INSERT INTO `data_rows` VALUES (76, 11, 'product_belongsto_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 8);
-INSERT INTO `data_rows` VALUES (77, 11, 'product_belongstomany_feature_option_relationship', 'relationship', 'Options', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\FeatureOption\",\"table\":\"feature_options\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"value\",\"pivot_table\":\"option_product\",\"pivot\":\"1\",\"taggable\":\"on\"}', 9);
+INSERT INTO `data_rows` VALUES (68, 11, 'scientific_name', 'text', 'Scientific Name', 0, 0, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:100\"}}', 3);
+INSERT INTO `data_rows` VALUES (69, 11, 'description', 'rich_text_box', 'Description', 0, 0, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:30000\"}}', 4);
+INSERT INTO `data_rows` VALUES (70, 11, 'photos', 'multiple_images', 'Photos', 0, 0, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\"},\"quality\":\"85%\",\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"70%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 6);
+INSERT INTO `data_rows` VALUES (71, 11, 'nutrition_photo', 'image', 'Nutrition Photo', 0, 0, 1, 1, 1, 1, '{\"resize\":{\"width\":\"1000\"},\"quality\":\"70%\",\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 7);
+INSERT INTO `data_rows` VALUES (72, 11, 'category_id', 'text', 'Category Id', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|numeric\"}}', 8);
+INSERT INTO `data_rows` VALUES (73, 11, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 12);
+INSERT INTO `data_rows` VALUES (74, 11, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 13);
+INSERT INTO `data_rows` VALUES (75, 11, 'deleted_at', 'timestamp', 'Deleted At', 0, 0, 0, 0, 0, 0, '{}', 14);
+INSERT INTO `data_rows` VALUES (76, 11, 'product_belongsto_category_relationship', 'relationship', 'categories', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\Category\",\"table\":\"categories\",\"type\":\"belongsTo\",\"column\":\"category_id\",\"key\":\"id\",\"label\":\"name\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 9);
+INSERT INTO `data_rows` VALUES (77, 11, 'product_belongstomany_feature_option_relationship', 'relationship', 'Options', 0, 1, 1, 1, 1, 1, '{\"model\":\"App\\\\Models\\\\FeatureOption\",\"table\":\"feature_options\",\"type\":\"belongsToMany\",\"column\":\"id\",\"key\":\"id\",\"label\":\"value\",\"pivot_table\":\"option_product\",\"pivot\":\"1\",\"taggable\":\"on\"}', 10);
 INSERT INTO `data_rows` VALUES (78, 7, 'feature_hasmany_feature_option_relationship', 'relationship', 'options', 0, 1, 1, 1, 0, 1, '{\"model\":\"App\\\\Models\\\\FeatureOption\",\"table\":\"feature_options\",\"type\":\"hasMany\",\"column\":\"feature_id\",\"key\":\"id\",\"label\":\"value\",\"pivot_table\":\"categories\",\"pivot\":\"0\",\"taggable\":\"0\"}', 3);
-INSERT INTO `data_rows` VALUES (79, 11, 'is_featured', 'checkbox', 'Is Featured', 0, 1, 1, 1, 1, 1, 'null', 10);
+INSERT INTO `data_rows` VALUES (79, 11, 'is_featured', 'checkbox', 'Is Featured', 0, 1, 1, 1, 1, 1, '{}', 11);
 INSERT INTO `data_rows` VALUES (80, 12, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
-INSERT INTO `data_rows` VALUES (81, 12, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:100\"}}', 2);
+INSERT INTO `data_rows` VALUES (81, 12, 'title', 'text', 'Title', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:100\"}}', 2);
 INSERT INTO `data_rows` VALUES (82, 12, 'link', 'text', 'Link', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:150|url\"}}', 3);
-INSERT INTO `data_rows` VALUES (83, 12, 'position', 'number', 'Position', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 4);
-INSERT INTO `data_rows` VALUES (84, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 5);
-INSERT INTO `data_rows` VALUES (85, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 6);
+INSERT INTO `data_rows` VALUES (83, 12, 'position', 'number', 'Position', 0, 1, 1, 1, 1, 1, '{\"default\":1,\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 5);
+INSERT INTO `data_rows` VALUES (84, 12, 'created_at', 'timestamp', 'Created At', 0, 1, 1, 1, 0, 1, '{}', 6);
+INSERT INTO `data_rows` VALUES (85, 12, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7);
 INSERT INTO `data_rows` VALUES (86, 13, 'id', 'text', 'Id', 1, 0, 0, 0, 0, 0, '{}', 1);
-INSERT INTO `data_rows` VALUES (87, 13, 'title', 'text', 'Title', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:100\"}}', 2);
+INSERT INTO `data_rows` VALUES (87, 13, 'title', 'rich_text_box', 'Title', 1, 0, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:20000\"}}', 2);
 INSERT INTO `data_rows` VALUES (88, 13, 'subtitle', 'text', 'Subtitle', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:100\"}}', 3);
 INSERT INTO `data_rows` VALUES (89, 13, 'url', 'text', 'Url', 0, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:150\"}}', 4);
 INSERT INTO `data_rows` VALUES (90, 13, 'photo', 'image', 'Photo', 0, 1, 1, 1, 1, 1, '{\"thumbnails\":[{\"name\":\"medium\",\"scale\":\"50%\"},{\"name\":\"small\",\"scale\":\"25%\"},{\"name\":\"cropped\",\"crop\":{\"width\":\"300\",\"height\":\"250\"}}]}', 5);
-INSERT INTO `data_rows` VALUES (91, 13, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 7);
-INSERT INTO `data_rows` VALUES (92, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 8);
-INSERT INTO `data_rows` VALUES (93, 13, 'position', 'number', 'Position', 0, 0, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 6);
+INSERT INTO `data_rows` VALUES (91, 13, 'created_at', 'timestamp', 'Created At', 0, 0, 1, 0, 0, 0, '{}', 8);
+INSERT INTO `data_rows` VALUES (92, 13, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 9);
+INSERT INTO `data_rows` VALUES (93, 13, 'position', 'number', 'Position', 0, 0, 1, 1, 1, 1, '{\"default\":1,\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 7);
 INSERT INTO `data_rows` VALUES (94, 4, 'position', 'number', 'Position', 0, 1, 1, 1, 1, 1, '{\"default\":1,\"validation\":{\"rule\":\"numeric|min:1|max:100\"}}', 6);
 INSERT INTO `data_rows` VALUES (95, 7, 'position', 'text', 'Position', 0, 1, 1, 1, 1, 1, '{}', 5);
+INSERT INTO `data_rows` VALUES (96, 13, 'location', 'select_dropdown', 'Location', 0, 1, 1, 1, 1, 1, '{\"default\":\"top\",\"options\":{\"top\":\"Top\",\"middle\":\"Middle\"}}', 6);
+INSERT INTO `data_rows` VALUES (97, 12, 'icon', 'text', 'Icon', 1, 1, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"required|max:80\"}}', 4);
+INSERT INTO `data_rows` VALUES (98, 11, 'excerpt', 'text_area', 'Excerpt', 0, 0, 1, 1, 1, 1, '{\"validation\":{\"rule\":\"nullable|max:5000\"}}', 5);
 
 -- ----------------------------
 -- Table structure for data_types
@@ -217,13 +222,13 @@ INSERT INTO `data_types` VALUES (1, 'users', 'users', 'User', 'Users', 'voyager-
 INSERT INTO `data_types` VALUES (2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2021-03-14 08:26:21', '2021-03-14 08:26:21');
 INSERT INTO `data_types` VALUES (3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2021-03-14 08:26:21', '2021-03-14 08:26:21');
 INSERT INTO `data_types` VALUES (4, 'categories', 'categories', 'Category', 'Categories', 'voyager-categories', 'TCG\\Voyager\\Models\\Category', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"name\",\"order_direction\":\"desc\",\"default_search_key\":\"name\",\"scope\":null}', '2021-03-14 08:26:22', '2021-03-27 07:57:19');
-INSERT INTO `data_types` VALUES (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', '', '', 1, 0, NULL, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
+INSERT INTO `data_types` VALUES (5, 'posts', 'posts', 'Post', 'Posts', 'voyager-news', 'TCG\\Voyager\\Models\\Post', 'TCG\\Voyager\\Policies\\PostPolicy', NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"desc\",\"default_search_key\":null,\"scope\":null}', '2021-03-14 08:26:22', '2021-03-29 14:55:30');
 INSERT INTO `data_types` VALUES (6, 'pages', 'pages', 'Page', 'Pages', 'voyager-file-text', 'TCG\\Voyager\\Models\\Page', NULL, '', '', 1, 0, NULL, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
 INSERT INTO `data_types` VALUES (7, 'features', 'features', 'Feature', 'Features', 'voyager-params', 'App\\Models\\Feature', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-14 08:49:15', '2021-03-27 07:57:32');
 INSERT INTO `data_types` VALUES (9, 'feature_options', 'feature-options', 'Feature Option', 'Feature Options', 'voyager-list', 'App\\Models\\FeatureOption', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"created_at\",\"order_display_column\":\"value\",\"order_direction\":\"desc\",\"default_search_key\":\"value\",\"scope\":null}', '2021-03-14 08:59:13', '2021-03-14 09:19:23');
-INSERT INTO `data_types` VALUES (11, 'products', 'products', 'Product', 'Products', 'voyager-basket', 'App\\Models\\Product', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-03-14 09:46:34', '2021-03-14 10:40:20');
-INSERT INTO `data_types` VALUES (12, 'socials', 'socials', 'Social', 'Socials', 'voyager-world', 'App\\Models\\Social', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"id\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-27 07:40:08', '2021-03-27 07:47:10');
-INSERT INTO `data_types` VALUES (13, 'banners', 'banners', 'Banner', 'Banners', 'voyager-images', 'App\\Models\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-27 07:46:36', '2021-03-27 20:25:59');
+INSERT INTO `data_types` VALUES (11, 'products', 'products', 'Product', 'Products', 'voyager-basket', 'App\\Models\\Product', NULL, NULL, NULL, 1, 0, '{\"order_column\":null,\"order_display_column\":null,\"order_direction\":\"asc\",\"default_search_key\":null,\"scope\":null}', '2021-03-14 09:46:34', '2021-03-29 21:03:34');
+INSERT INTO `data_types` VALUES (12, 'socials', 'socials', 'Social Networks', 'Socials', 'voyager-world', 'App\\Models\\Social', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-27 07:40:08', '2021-03-29 19:34:13');
+INSERT INTO `data_types` VALUES (13, 'banners', 'banners', 'Banner', 'Banners', 'voyager-images', 'App\\Models\\Banner', NULL, NULL, NULL, 1, 0, '{\"order_column\":\"position\",\"order_display_column\":\"title\",\"order_direction\":\"desc\",\"default_search_key\":\"title\",\"scope\":null}', '2021-03-27 07:46:36', '2021-03-29 07:48:11');
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -299,7 +304,7 @@ CREATE TABLE `menu_items`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `menu_items_menu_id_foreign`(`menu_id`) USING BTREE,
   CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu_items
@@ -328,6 +333,8 @@ INSERT INTO `menu_items` VALUES (21, 2, 'ماهی', '', '_self', NULL, '#000000'
 INSERT INTO `menu_items` VALUES (23, 2, 'درباره ما', '', '_self', NULL, '#000000', NULL, 2, '2021-03-27 12:05:55', '2021-03-27 12:06:28', NULL, '');
 INSERT INTO `menu_items` VALUES (24, 2, 'درباره ما', '', '_self', NULL, '#000000', 23, 1, '2021-03-27 12:06:24', '2021-03-27 12:06:30', NULL, '');
 INSERT INTO `menu_items` VALUES (25, 2, 'تماس با ما', '', '_self', NULL, '#000000', 23, 2, '2021-03-27 12:06:53', '2021-03-27 12:07:04', NULL, '');
+INSERT INTO `menu_items` VALUES (26, 3, 'FAQs', '', '_self', NULL, '#000000', NULL, 20, '2021-03-29 20:11:43', '2021-03-29 20:11:43', NULL, '');
+INSERT INTO `menu_items` VALUES (27, 3, 'About us', '', '_self', NULL, '#000000', NULL, 21, '2021-03-29 20:11:58', '2021-03-29 20:11:58', NULL, '');
 
 -- ----------------------------
 -- Table structure for menus
@@ -340,13 +347,14 @@ CREATE TABLE `menus`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `menus_name_unique`(`name`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menus
 -- ----------------------------
 INSERT INTO `menus` VALUES (1, 'admin', '2021-03-14 08:26:21', '2021-03-14 08:26:21');
 INSERT INTO `menus` VALUES (2, 'header', '2021-03-27 12:02:33', '2021-03-27 12:02:33');
+INSERT INTO `menus` VALUES (3, 'footer', '2021-03-29 20:04:33', '2021-03-29 20:04:33');
 
 -- ----------------------------
 -- Table structure for migrations
@@ -401,7 +409,12 @@ CREATE TABLE `option_product`  (
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of option_product
+-- ----------------------------
+INSERT INTO `option_product` VALUES (1, 1, 1, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for pages
@@ -635,9 +648,9 @@ CREATE TABLE `posts`  (
 -- Records of posts
 -- ----------------------------
 INSERT INTO `posts` VALUES (1, 0, NULL, 'Lorem Ipsum Post', NULL, 'This is the excerpt for the Lorem Ipsum Post', '<p>This is the body of the lorem ipsum post</p>', 'posts/post1.jpg', 'lorem-ipsum-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
-INSERT INTO `posts` VALUES (2, 0, NULL, 'My Sample Post', NULL, 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\r\n                <h2>We can use all kinds of format!</h2>\r\n                <p>And include a bunch of other stuff.</p>', 'posts/post2.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
-INSERT INTO `posts` VALUES (3, 0, NULL, 'Latest Post', NULL, 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/post3.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
-INSERT INTO `posts` VALUES (4, 0, NULL, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\r\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\r\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/post4.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-14 08:26:22');
+INSERT INTO `posts` VALUES (2, 1, 1, 'My Sample Post', '', 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\n<h2>We can use all kinds of format!</h2>\n<p>And include a bunch of other stuff.</p>', 'posts/March2021/HjR74hWC8gsSZmVDpDHM.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-29 14:53:13');
+INSERT INTO `posts` VALUES (3, 1, 1, 'Latest Post', '', 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/March2021/LVASedzPrfMkkepUg6hN.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-29 14:52:45');
+INSERT INTO `posts` VALUES (4, 1, 1, 'Yarr Post', '', 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/March2021/OfR7KEmyuiERFBeCN9nj.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2021-03-14 08:26:22', '2021-03-29 14:55:51');
 
 -- ----------------------------
 -- Table structure for products
@@ -655,9 +668,15 @@ CREATE TABLE `products`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   `deleted_at` timestamp(0) NULL DEFAULT NULL,
   `is_featured` tinyint(4) NULL DEFAULT 0,
+  `excerpt` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `products_category_id_index`(`category_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of products
+-- ----------------------------
+INSERT INTO `products` VALUES (1, 'FRESH BEET JUICE', 'FRESH BEET JUICE', '<p><span style=\"color: #777777; font-family: Roboto, sans-serif;\">Turducken fais do do cajun interstate andouille remoulade hunting Mardi Gras Thibideaux sac a lait. Mardi Gras viens ci trail ride levee food fishing red beans &amp; rice. Boucherie gumbo cayenne andouille trail ride viens ci barbed wire sa fait chaud pecan pie.</span></p>', '[\"products\\/March2021\\/ybj3UVduo397lnJn6aE3.jpg\",\"products\\/March2021\\/dUrJzL4doHdSb7kBqxMc.jpg\",\"products\\/March2021\\/033yJi6t6IZEMHPA5Y7M.jpg\"]', 'products/March2021/oVgLRMdQrL477dMiWh4C.jpg', 1, '2021-03-29 07:49:43', '2021-03-29 21:02:57', NULL, 1, 'Turducken fais do do cajun interstate andouille remoulade hunting Mardi Gras Thibideaux sac a lait. Mardi Gras viens ci trail ride levee food fishing red beans & rice. Boucherie gumbo cayenne andouille trail ride viens ci barbed wire sa fait chaud pecan pie.');
 
 -- ----------------------------
 -- Table structure for roles
@@ -694,21 +713,31 @@ CREATE TABLE `settings`  (
   `group` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `settings_key_unique`(`key`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 23 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of settings
 -- ----------------------------
-INSERT INTO `settings` VALUES (1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site');
-INSERT INTO `settings` VALUES (2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site');
-INSERT INTO `settings` VALUES (3, 'site.logo', 'Site Logo', 'settings\\March2021\\B6cjmMLmk9c3hWfVuhHa.png', '', 'image', 3, 'Site');
+INSERT INTO `settings` VALUES (3, 'site.logo', 'Site Logo', 'settings/March2021/1xjJbMalQB5H8sYiVdJs.png', '', 'image', 3, 'Site');
 INSERT INTO `settings` VALUES (4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site');
 INSERT INTO `settings` VALUES (5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin');
-INSERT INTO `settings` VALUES (6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin');
-INSERT INTO `settings` VALUES (7, 'admin.description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 2, 'Admin');
+INSERT INTO `settings` VALUES (6, 'admin.title', 'Admin Title', 'Tohfeh', '', 'text', 1, 'Admin');
+INSERT INTO `settings` VALUES (7, 'admin.description', 'Admin Description', 'Tohfeh admin', '', 'text', 2, 'Admin');
 INSERT INTO `settings` VALUES (8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin');
 INSERT INTO `settings` VALUES (9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin');
 INSERT INTO `settings` VALUES (10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
+INSERT INTO `settings` VALUES (11, 'en.welcome', 'Welcome description', '<div class=\"sec-title\" style=\"box-sizing: border-box; margin: 0px 0px 40px; padding: 0px; border: none; outline: none; position: relative; color: #777777; font-family: Roboto, sans-serif;\">\r\n<h2 style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Poppins, sans-serif; line-height: 1em; color: #333333; font-size: 32px; position: relative; background: none; display: inline-block; text-transform: uppercase;\">WELCOME TO TYUMEN</h2>\r\n<div class=\"title-text\" style=\"box-sizing: border-box; margin: 10px 0px 0px; padding: 0px; border: none; outline: none; position: relative; font-size: 16px; font-family: Pacifico, cursive;\">Have a look at our beautiful farm!</div>\r\n</div>\r\n<div class=\"dark-text\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; position: relative; color: #333333; line-height: 1.8em; font-family: Roboto, sans-serif;\">Sac a lait jambalaya gulf shrimp pirogue beer tasso Boudreaux. Red beans &amp; rice gumbo King Cake fais do do Mardi Gras. Trail ride fais do do Lafayette football coffee Fauxcheaux sac a lait andouille.</div>\r\n<p>&nbsp;</p>\r\n<div class=\"text\" style=\"box-sizing: border-box; margin: 20px 0px 40px; padding: 0px; border: none; outline: none; position: relative; color: #777777; font-size: 14px; line-height: 1.8em; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Macque choux cayenne gumbo catahoula interstate. Farmer\'s market hunting cajun iced tea bread pudding alligator cayenne. Lagniappe food fais do do praline macque choux catahoula. Farmer\'s market bread pudding sugar cane downtown Lafayette envie bayou. Tasso Fauxcheaux pecan pie sauce piquante fais do do cajun mirliton food iced tea bourre. Yams football andouille canaille fishing coffee. Yams Mardi Gras okra gumbo tasso zydeco turducken farmer\'s market Fauxcheaux macque choux make a roux. Cajun hunting turducken downtown smoked sausage.Sugar cane mirliton sugar cane interstate Acadiana sa fait chaud envie red beans &amp; rice sac a lait cayenne. Beer cajun mirliton zydeco ca c\'est bon praline smoked sausage file viens ci.</div>', NULL, 'rich_text_box', 8, 'EN');
+INSERT INTO `settings` VALUES (12, 'fa.welcome', 'Welcome description', '<div class=\"sec-title\" style=\"box-sizing: border-box; margin: 0px 0px 40px; padding: 0px; border: none; outline: none; position: relative; color: #777777; font-family: Roboto, sans-serif;\">\r\n<h2 style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Poppins, sans-serif; line-height: 1em; color: #333333; font-size: 32px; position: relative; background: none; display: inline-block; text-transform: uppercase;\">WELCOME TO TYUMEN</h2>\r\n<div class=\"title-text\" style=\"box-sizing: border-box; margin: 10px 0px 0px; padding: 0px; border: none; outline: none; position: relative; font-size: 16px; font-family: Pacifico, cursive;\">Have a look at our beautiful farm!</div>\r\n</div>\r\n<div class=\"dark-text\" style=\"box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; position: relative; color: #333333; line-height: 1.8em; font-family: Roboto, sans-serif;\">Sac a lait jambalaya gulf shrimp pirogue beer tasso Boudreaux. Red beans &amp; rice gumbo King Cake fais do do Mardi Gras. Trail ride fais do do Lafayette football coffee Fauxcheaux sac a lait andouille.</div>\r\n<p>&nbsp;</p>\r\n<div class=\"text\" style=\"box-sizing: border-box; margin: 20px 0px 40px; padding: 0px; border: none; outline: none; position: relative; color: #777777; font-size: 14px; line-height: 1.8em; font-family: Roboto, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">Macque choux cayenne gumbo catahoula interstate. Farmer\'s market hunting cajun iced tea bread pudding alligator cayenne. Lagniappe food fais do do praline macque choux catahoula. Farmer\'s market bread pudding sugar cane downtown Lafayette envie bayou. Tasso Fauxcheaux pecan pie sauce piquante fais do do cajun mirliton food iced tea bourre. Yams football andouille canaille fishing coffee. Yams Mardi Gras okra gumbo tasso zydeco turducken farmer\'s market Fauxcheaux macque choux make a roux. Cajun hunting turducken downtown smoked sausage.Sugar cane mirliton sugar cane interstate Acadiana sa fait chaud envie red beans &amp; rice sac a lait cayenne. Beer cajun mirliton zydeco ca c\'est bon praline smoked sausage file viens ci.</div>', NULL, 'rich_text_box', 9, 'FA');
+INSERT INTO `settings` VALUES (13, 'en.title', 'Site title', 'Tohfeh', NULL, 'text', 6, 'EN');
+INSERT INTO `settings` VALUES (14, 'fa.title', 'Site title', 'تحفه', NULL, 'text', 7, 'FA');
+INSERT INTO `settings` VALUES (15, 'en.welcome-image', 'Welcome image', 'settings/March2021/P9xwuEhTcpvyDuTim8nB.jpg', '{\r\n    \"resize\": {\r\n        \"width\": \"600\"\r\n    },\r\n    \"quality\": \"80%\"\r\n}', 'image', 10, 'EN');
+INSERT INTO `settings` VALUES (16, 'en.footer-desc', 'Footer Description', 'Hot sauce andouille pecan pie barbed wire boucherie. Zydeco levee pirogue mirliton file make a roux etoufee pecan pie viens ci merci beaucoup.', NULL, 'text', 11, 'EN');
+INSERT INTO `settings` VALUES (17, 'fa.footer-desc', 'Footer Description', 'Hot sauce andouille pecan pie barbed wire boucherie. Zydeco levee pirogue mirliton file make a roux etoufee pecan pie viens ci merci beaucoup.', NULL, 'text', 12, 'FA');
+INSERT INTO `settings` VALUES (18, 'site.email', 'Email', 'info@tohfeh.com', NULL, 'text', 13, 'Site');
+INSERT INTO `settings` VALUES (19, 'en.phone', 'Phone', '9866666666', NULL, 'text', 14, 'EN');
+INSERT INTO `settings` VALUES (20, 'fa.phone', 'Phone', '9866666666', NULL, 'text', 15, 'FA');
+INSERT INTO `settings` VALUES (21, 'en.address', 'Address', 'No 30, Westfield Ave, Newyork, USA', NULL, 'text', 16, 'EN');
+INSERT INTO `settings` VALUES (22, 'fa.address', 'Address', 'No 30, Westfield Ave, Newyork, USA', NULL, 'text', 17, 'FA');
 
 -- ----------------------------
 -- Table structure for socials
@@ -716,13 +745,20 @@ INSERT INTO `settings` VALUES (10, 'admin.google_analytics_client_id', 'Google A
 DROP TABLE IF EXISTS `socials`;
 CREATE TABLE `socials`  (
   `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `position` int(10) UNSIGNED NULL DEFAULT 1,
   `created_at` timestamp(0) NULL DEFAULT NULL,
   `updated_at` timestamp(0) NULL DEFAULT NULL,
+  `icon` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of socials
+-- ----------------------------
+INSERT INTO `socials` VALUES (1, 'facebook', 'https://facebook.com', 1, '2021-03-29 19:34:52', '2021-03-29 19:34:52', 'fa fa-facebook');
+INSERT INTO `socials` VALUES (2, 'Twitter', 'https://twittter.com', 1, '2021-03-29 19:35:52', '2021-03-29 19:35:52', 'fa fa-twitter');
 
 -- ----------------------------
 -- Table structure for translations
@@ -739,7 +775,7 @@ CREATE TABLE `translations`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `translations_table_name_column_name_foreign_key_locale_unique`(`table_name`, `column_name`, `foreign_key`, `locale`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 201 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 290 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of translations
@@ -937,12 +973,101 @@ INSERT INTO `translations` VALUES (190, 'menu_items', 'title', 21, 'en', 'fish',
 INSERT INTO `translations` VALUES (192, 'menu_items', 'title', 23, 'en', 'about us', '2021-03-27 12:05:55', '2021-03-27 12:05:55');
 INSERT INTO `translations` VALUES (193, 'menu_items', 'title', 24, 'en', 'who we are', '2021-03-27 12:06:24', '2021-03-27 12:06:24');
 INSERT INTO `translations` VALUES (194, 'menu_items', 'title', 25, 'en', 'contact us', '2021-03-27 12:06:53', '2021-03-27 12:06:53');
-INSERT INTO `translations` VALUES (195, 'banners', 'title', 1, 'en', 'Organic Fruit, Vegetables and Meat', '2021-03-27 20:25:04', '2021-03-27 20:25:04');
+INSERT INTO `translations` VALUES (195, 'banners', 'title', 1, 'en', '<h2>Organic Fruit, Vegetables and Meat</h2>', '2021-03-27 20:25:04', '2021-03-29 07:39:04');
 INSERT INTO `translations` VALUES (196, 'banners', 'subtitle', 1, 'en', 'shop now', '2021-03-27 20:25:04', '2021-03-27 20:25:04');
 INSERT INTO `translations` VALUES (197, 'banners', 'title', 1, 'tr', 'Organic Fruit, Vegetables and Meat', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
 INSERT INTO `translations` VALUES (198, 'banners', 'title', 1, 'ru', 'Organic Fruit, Vegetables and Meat', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
 INSERT INTO `translations` VALUES (199, 'banners', 'subtitle', 1, 'tr', 'shop now', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
 INSERT INTO `translations` VALUES (200, 'banners', 'subtitle', 1, 'ru', 'shop now', '2021-03-27 20:26:13', '2021-03-27 20:26:13');
+INSERT INTO `translations` VALUES (201, 'banners', 'title', 2, 'en', '<h3>Unlock your potential <br />with good nutrition</h3>\n<div class=\"sale-percent\">Sale! Upto50% off</div>', '2021-03-29 07:03:01', '2021-03-29 07:34:49');
+INSERT INTO `translations` VALUES (202, 'banners', 'subtitle', 2, 'en', 'shop now', '2021-03-29 07:03:01', '2021-03-29 07:03:01');
+INSERT INTO `translations` VALUES (203, 'data_rows', 'display_name', 96, 'en', 'Location', '2021-03-29 07:24:33', '2021-03-29 07:24:33');
+INSERT INTO `translations` VALUES (204, 'data_rows', 'display_name', 96, 'tr', 'Location', '2021-03-29 07:25:51', '2021-03-29 07:25:51');
+INSERT INTO `translations` VALUES (205, 'data_rows', 'display_name', 96, 'ru', 'Location', '2021-03-29 07:25:51', '2021-03-29 07:25:51');
+INSERT INTO `translations` VALUES (206, 'banners', 'title', 2, 'tr', 'UNLOCK YOUR POTENTIAL', '2021-03-29 07:27:24', '2021-03-29 07:27:24');
+INSERT INTO `translations` VALUES (207, 'banners', 'title', 2, 'ru', 'UNLOCK YOUR POTENTIAL', '2021-03-29 07:27:24', '2021-03-29 07:27:24');
+INSERT INTO `translations` VALUES (208, 'banners', 'subtitle', 2, 'tr', 'shop now', '2021-03-29 07:27:24', '2021-03-29 07:27:24');
+INSERT INTO `translations` VALUES (209, 'banners', 'subtitle', 2, 'ru', 'shop now', '2021-03-29 07:27:24', '2021-03-29 07:27:24');
+INSERT INTO `translations` VALUES (210, 'data_rows', 'display_name', 79, 'en', 'Is Featured', '2021-03-29 07:47:57', '2021-03-29 07:47:57');
+INSERT INTO `translations` VALUES (211, 'data_rows', 'display_name', 79, 'tr', 'Is Featured', '2021-03-29 07:50:33', '2021-03-29 07:50:33');
+INSERT INTO `translations` VALUES (212, 'data_rows', 'display_name', 79, 'ru', 'Is Featured', '2021-03-29 07:50:34', '2021-03-29 07:50:34');
+INSERT INTO `translations` VALUES (213, 'products', 'name', 1, 'en', 'FRESH BEET JUICE', '2021-03-29 07:51:33', '2021-03-29 07:51:33');
+INSERT INTO `translations` VALUES (214, 'products', 'scientific_name', 1, 'en', 'FRESH BEET JUICE', '2021-03-29 07:51:33', '2021-03-29 07:51:33');
+INSERT INTO `translations` VALUES (215, 'products', 'name', 1, 'tr', 'FRESH BEET JUICE', '2021-03-29 08:55:05', '2021-03-29 08:55:05');
+INSERT INTO `translations` VALUES (216, 'products', 'name', 1, 'ru', 'FRESH BEET JUICE', '2021-03-29 08:55:05', '2021-03-29 08:55:05');
+INSERT INTO `translations` VALUES (217, 'products', 'scientific_name', 1, 'tr', 'FRESH BEET JUICE', '2021-03-29 08:55:05', '2021-03-29 08:55:05');
+INSERT INTO `translations` VALUES (218, 'products', 'scientific_name', 1, 'ru', 'FRESH BEET JUICE', '2021-03-29 08:55:05', '2021-03-29 08:55:05');
+INSERT INTO `translations` VALUES (219, 'data_rows', 'display_name', 80, 'tr', 'Id', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (220, 'data_rows', 'display_name', 80, 'ru', 'Id', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (221, 'data_rows', 'display_name', 81, 'tr', 'Title', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (222, 'data_rows', 'display_name', 81, 'ru', 'Title', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (223, 'data_rows', 'display_name', 82, 'tr', 'Link', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (224, 'data_rows', 'display_name', 82, 'ru', 'Link', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (225, 'data_rows', 'display_name', 83, 'tr', 'Position', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (226, 'data_rows', 'display_name', 83, 'ru', 'Position', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (227, 'data_rows', 'display_name', 84, 'tr', 'Created At', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (228, 'data_rows', 'display_name', 84, 'ru', 'Created At', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (229, 'data_rows', 'display_name', 85, 'tr', 'Updated At', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (230, 'data_rows', 'display_name', 85, 'ru', 'Updated At', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (231, 'data_types', 'display_name_singular', 12, 'tr', 'Social', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (232, 'data_types', 'display_name_singular', 12, 'ru', 'Social', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (233, 'data_types', 'display_name_plural', 12, 'tr', 'Socials', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (234, 'data_types', 'display_name_plural', 12, 'ru', 'Socials', '2021-03-29 09:02:31', '2021-03-29 09:02:31');
+INSERT INTO `translations` VALUES (235, 'posts', 'title', 3, 'en', 'Latest Post', '2021-03-29 14:52:45', '2021-03-29 14:52:45');
+INSERT INTO `translations` VALUES (236, 'posts', 'excerpt', 3, 'en', 'This is the excerpt for the latest post', '2021-03-29 14:52:45', '2021-03-29 14:52:45');
+INSERT INTO `translations` VALUES (237, 'posts', 'body', 3, 'en', '<p>This is the body for the latest post</p>', '2021-03-29 14:52:45', '2021-03-29 14:52:45');
+INSERT INTO `translations` VALUES (238, 'posts', 'slug', 3, 'en', 'latest-post', '2021-03-29 14:52:45', '2021-03-29 14:52:45');
+INSERT INTO `translations` VALUES (239, 'posts', 'meta_description', 3, 'en', 'This is the meta description', '2021-03-29 14:52:45', '2021-03-29 14:52:45');
+INSERT INTO `translations` VALUES (240, 'posts', 'meta_keywords', 3, 'en', 'keyword1, keyword2, keyword3', '2021-03-29 14:52:45', '2021-03-29 14:52:45');
+INSERT INTO `translations` VALUES (241, 'posts', 'title', 2, 'en', 'My Sample Post', '2021-03-29 14:53:13', '2021-03-29 14:53:13');
+INSERT INTO `translations` VALUES (242, 'posts', 'excerpt', 2, 'en', 'This is the excerpt for the sample Post', '2021-03-29 14:53:14', '2021-03-29 14:53:14');
+INSERT INTO `translations` VALUES (243, 'posts', 'body', 2, 'en', '<p>This is the body for the sample post, which includes the body.</p>\r\n                <h2>We can use all kinds of format!</h2>\r\n                <p>And include a bunch of other stuff.</p>', '2021-03-29 14:53:14', '2021-03-29 14:53:14');
+INSERT INTO `translations` VALUES (244, 'posts', 'slug', 2, 'en', 'my-sample-post', '2021-03-29 14:53:14', '2021-03-29 14:53:14');
+INSERT INTO `translations` VALUES (245, 'posts', 'meta_description', 2, 'en', 'Meta Description for sample post', '2021-03-29 14:53:14', '2021-03-29 14:53:14');
+INSERT INTO `translations` VALUES (246, 'posts', 'meta_keywords', 2, 'en', 'keyword1, keyword2, keyword3', '2021-03-29 14:53:14', '2021-03-29 14:53:14');
+INSERT INTO `translations` VALUES (247, 'posts', 'title', 4, 'en', 'Yarr Post', '2021-03-29 14:53:32', '2021-03-29 14:53:32');
+INSERT INTO `translations` VALUES (248, 'posts', 'excerpt', 4, 'en', 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '2021-03-29 14:53:32', '2021-03-29 14:53:32');
+INSERT INTO `translations` VALUES (249, 'posts', 'body', 4, 'en', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\r\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\r\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', '2021-03-29 14:53:33', '2021-03-29 14:53:33');
+INSERT INTO `translations` VALUES (250, 'posts', 'slug', 4, 'en', 'yarr-post', '2021-03-29 14:53:33', '2021-03-29 14:53:33');
+INSERT INTO `translations` VALUES (251, 'posts', 'meta_description', 4, 'en', 'this be a meta descript', '2021-03-29 14:53:33', '2021-03-29 14:53:33');
+INSERT INTO `translations` VALUES (252, 'posts', 'meta_keywords', 4, 'en', 'keyword1, keyword2, keyword3', '2021-03-29 14:53:33', '2021-03-29 14:53:33');
+INSERT INTO `translations` VALUES (253, 'data_rows', 'display_name', 29, 'en', 'ID', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (254, 'data_rows', 'display_name', 30, 'en', 'Author', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (255, 'data_rows', 'display_name', 31, 'en', 'Category', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (256, 'data_rows', 'display_name', 32, 'en', 'Title', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (257, 'data_rows', 'display_name', 42, 'en', 'SEO Title', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (258, 'data_rows', 'display_name', 33, 'en', 'Excerpt', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (259, 'data_rows', 'display_name', 34, 'en', 'Body', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (260, 'data_rows', 'display_name', 35, 'en', 'Post Image', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (261, 'data_rows', 'display_name', 36, 'en', 'Slug', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (262, 'data_rows', 'display_name', 37, 'en', 'Meta Description', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (263, 'data_rows', 'display_name', 38, 'en', 'Meta Keywords', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (264, 'data_rows', 'display_name', 39, 'en', 'Status', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (265, 'data_rows', 'display_name', 43, 'en', 'Featured', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (266, 'data_rows', 'display_name', 40, 'en', 'Created At', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (267, 'data_rows', 'display_name', 41, 'en', 'Updated At', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (268, 'data_types', 'display_name_singular', 5, 'en', 'Post', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (269, 'data_types', 'display_name_plural', 5, 'en', 'Posts', '2021-03-29 14:55:30', '2021-03-29 14:55:30');
+INSERT INTO `translations` VALUES (270, 'posts', 'title', 4, 'tr', 'Yarr Post', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (271, 'posts', 'title', 4, 'ru', 'Yarr Post', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (272, 'posts', 'excerpt', 4, 'tr', 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (273, 'posts', 'excerpt', 4, 'ru', 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (274, 'posts', 'body', 4, 'tr', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\r\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\r\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (275, 'posts', 'body', 4, 'ru', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\r\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\r\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (276, 'posts', 'slug', 4, 'tr', 'yarr-post', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (277, 'posts', 'slug', 4, 'ru', 'yarr-post', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (278, 'posts', 'meta_description', 4, 'tr', 'this be a meta descript', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (279, 'posts', 'meta_description', 4, 'ru', 'this be a meta descript', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (280, 'posts', 'meta_keywords', 4, 'tr', 'keyword1, keyword2, keyword3', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (281, 'posts', 'meta_keywords', 4, 'ru', 'keyword1, keyword2, keyword3', '2021-03-29 14:55:51', '2021-03-29 14:55:51');
+INSERT INTO `translations` VALUES (282, 'data_rows', 'display_name', 97, 'en', 'Icon', '2021-03-29 19:34:13', '2021-03-29 19:34:13');
+INSERT INTO `translations` VALUES (283, 'socials', 'title', 1, 'en', 'facebook', '2021-03-29 19:34:52', '2021-03-29 19:34:52');
+INSERT INTO `translations` VALUES (284, 'socials', 'link', 1, 'en', 'https://facebook.com', '2021-03-29 19:34:52', '2021-03-29 19:34:52');
+INSERT INTO `translations` VALUES (285, 'socials', 'title', 2, 'en', 'twitter', '2021-03-29 19:35:53', '2021-03-29 19:35:53');
+INSERT INTO `translations` VALUES (286, 'socials', 'link', 2, 'en', 'https://twittter.com', '2021-03-29 19:35:53', '2021-03-29 19:35:53');
+INSERT INTO `translations` VALUES (287, 'menu_items', 'title', 26, 'en', 'FAQS', '2021-03-29 20:11:44', '2021-03-29 20:11:44');
+INSERT INTO `translations` VALUES (288, 'menu_items', 'title', 27, 'en', 'About us', '2021-03-29 20:11:58', '2021-03-29 20:11:58');
+INSERT INTO `translations` VALUES (289, 'data_rows', 'display_name', 98, 'en', 'Excerpt', '2021-03-29 21:03:34', '2021-03-29 21:03:34');
 
 -- ----------------------------
 -- Table structure for user_roles

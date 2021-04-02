@@ -19,9 +19,9 @@
                             </div>
                             <div class="lower-box">
                                 <div class="title">{{optional($firstPost->category)->getTranslatedAttribute('name')}}</div>
-                                <h3><a href="blog-single.html">{{$firstPost->getTranslatedAttribute('title')}}</a></h3>
+                                <h3><a href="#">{{$firstPost->getTranslatedAttribute('title')}}</a></h3>
                                 <div class="text">{{Str::limit($firstPost->getTranslatedAttribute('excerpt'), 90)}} </div>
-                                <a href="blog-single.html" class="read-more">Read More</a>
+                                <a href="#" class="read-more">Read More</a>
                             </div>
                         </div>
                 	</div>

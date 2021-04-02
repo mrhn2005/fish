@@ -8,7 +8,7 @@
             	<div class="outer-container clearfix">
                     <!--Logo Box-->
                     <div class="logo-box">
-                        <div class="logo"><a href="index-2.html"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt=""></a></div>
+                        <div class="logo"><a href="{{route('home')}}"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt=""></a></div>
                     </div>
 
                     <!--Nav Outer-->
@@ -41,9 +41,9 @@
                                         <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
                                             <li class="panel-outer">
                                                 <div class="form-container">
-                                                    <form method="post" action="http://wp.hostlin.com/tyumen/blog.html">
+                                                    <form method="get" action="{{route('products.index')}}">
                                                         <div class="form-group">
-                                                            <input type="search" name="field-name" value="" placeholder="Search Here" required>
+                                                            <input type="search" name="{{SearchEnum::TERM}}" value="" placeholder="Search Here" required>
                                                             <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                                                         </div>
                                                     </form>
