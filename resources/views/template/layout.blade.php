@@ -19,6 +19,10 @@
 .main-header .main-box .logo-box .logo img {
     max-height: 80px;
 }
+
+.footer-logo img {
+    max-height: 80px
+}
 /* .main-menu .navigation > li {
     padding: 15px 0px;
 }
