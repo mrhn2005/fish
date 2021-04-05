@@ -12,7 +12,7 @@
                     <div class="news-style-three">
                         <div class="inner-box">
                             <div class="image-box">
-                                <img src="{{Helper::placeholder($post->photo)}}" alt="{{$post->title}}" />
+                                <img src="{{Helper::placeholder($post->image)}}" alt="{{$post->title}}" />
                             </div>
                             <!--Content Box-->
                             <div class="content-box">
@@ -23,7 +23,7 @@
                                 </div>
 
                                 <div class="lower-box">
-                                    <div class="title">{{optional($post->categort)->getTranslatedAttribute('name')}}</div>
+                                    <div class="title">{{optional($post->category)->getTranslatedAttribute('name')}}</div>
                                     <h3>{{$post->getTranslatedAttribute('title')}}</h3>
                                     {!!$post->getTranslatedAttribute('body')!!}
                                 </div>
@@ -54,14 +54,12 @@
 
                         @foreach ($latestPosts as $latestPost)
                         <article class="post">
-                            <figure class="post-thumb"><a href="blog-detail.html"><img src="{{Helper::getThumbnailSingle($latestPost, 'small')}}" alt="{{$latestPost->title}}"></a></figure>
+                            <figure class="post-thumb"><a href="{{route('posts.show', $latestPost->id)}}"><img src="{{Helper::getThumbnailSingle($latestPost, 'small')}}" alt="{{$latestPost->title}}"></a></figure>
                             <div class="post-info">{{$latestPost->created_at->diffForHumans()}}</div>
-                            <h4><a href="blog-detail.html">{{Str::limit($latestPost->getTranslatedAttribute('excerpt'), 100)}}</a></h4>
+                            <h4><a href="{{route('posts.show', $latestPost->id)}}">{{Str::limit($latestPost->getTranslatedAttribute('excerpt'), 100)}}</a></h4>
                         </article>
                         @endforeach
                     </div>
-
-
                 </div>
             </div>
         </div>

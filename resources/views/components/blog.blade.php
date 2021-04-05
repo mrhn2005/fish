@@ -15,13 +15,13 @@
                 	<div class="news-style-one">
                         <div class="inner-box">
                             <div class="image-box">
-                                <a href="#"><img src="{{Helper::placeholder($firstPost->image)}}" alt="{{$firstPost->title}}" /></a>
+                                <a href="{{route('posts.show', $firstPost->id)}}"><img src="{{Helper::placeholder($firstPost->image)}}" alt="{{$firstPost->title}}" /></a>
                             </div>
                             <div class="lower-box">
                                 <div class="title">{{optional($firstPost->category)->getTranslatedAttribute('name')}}</div>
-                                <h3><a href="#">{{$firstPost->getTranslatedAttribute('title')}}</a></h3>
+                                <h3><a href="{{route('posts.show', $firstPost->id)}}">{{$firstPost->getTranslatedAttribute('title')}}</a></h3>
                                 <div class="text">{{Str::limit($firstPost->getTranslatedAttribute('excerpt'), 90)}} </div>
-                                <a href="#" class="read-more">Read More</a>
+                                <a href="{{route('posts.show', $firstPost->id)}}" class="read-more">Read More</a>
                             </div>
                         </div>
                 	</div>
@@ -37,7 +37,7 @@
                                 <!--Image Column-->
                                 <div class="image-column pull-{{$loop->first ? 'right' : 'left'}} col-md-6 col-sm-6 col-xs-12">
                                 	<div class="image-box">
-                                    	<a href="blog-single.html"><img src="{{Helper::getThumbnailSingle($post, 'medium')}}" alt="{{$post->title}}" /></a>
+                                    	<a href="{{route('posts.show', $post->id)}}"><img src="{{Helper::getThumbnailSingle($post, 'medium')}}" alt="{{$post->title}}" /></a>
                                     </div>
                                 </div>
                                 <!--Content Column-->
@@ -45,7 +45,7 @@
                                 	<div class="content-box">
                                         <div class="inner">
                                             <div class="title">{{optional($post->category)->getTranslatedAttribute('name')}}</div>
-                                            <h3><a href="blog-single.html">O{{$post->getTranslatedAttribute('title')}}</a></h3>
+                                            <h3><a href="{{route('posts.show', $post->id)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
                                             <div class="text">{{Str::limit($post->getTranslatedAttribute('excerpt'), 90)}}</div>
                                         </div>
                                     </div>
