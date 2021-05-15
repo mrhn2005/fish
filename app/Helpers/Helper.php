@@ -51,7 +51,7 @@ class Helper
 
     public static function getThumbnail(Model $model, string $size): string
     {
-        if (count($model->decodedPhotos)) {
+        if ($model->decodedPhotos && count($model->decodedPhotos)) {
             return Voyager::image($model->getThumbnail($model->decodedPhotos[0], $size));
         }
 
