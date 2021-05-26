@@ -13,7 +13,8 @@ class ProductController extends Controller
         $product = Product::withTranslation(app()->getLocale())->with('category')->findOrFail($id);
         $relatedProducts = Product::withTranslation(app()->getLocale())
             ->where('category_id', $product->category_id)
-            // ->where('id', '<>', $id)
+            ->where('id', '<>', $id)
+            ->limit(6)
             ->get();
 
         return view('template.products.show', compact('product', 'relatedProducts'));

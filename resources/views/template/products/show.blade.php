@@ -14,10 +14,20 @@
                             <div class="row clearfix">
                                 <div class="image-column col-md-5 col-sm-12 col-xs-12">
                                     <figure class="image-box">
-                                        <a href="{{Helper::placeholder($product->decodedPhotos[0] ?? null)}}" class="lightbox-image" title="{{$product->getTranslatedAttribute('name')}}">
-                                            <img src="{{Helper::placeholder($product->decodedPhotos[0] ?? null)}}" alt="{{$product->name}}">
+                                        <a href="{{Helper::placeholder($product->firstPhoto)}}" class="fancybox-thumb" rel="fancybox-thumb" title="{{$product->getTranslatedAttribute('name')}}">
+                                            <img src="{{Helper::placeholder($product->firstPhoto)}}" alt="{{$product->name}}">
                                         </a>
                                     </figure>
+                                    <div class="product-photos">
+                                        @foreach ($product->otherPhotos as $photo)
+                                        <figure class="image-box">
+                                            <a href="{{Helper::placeholder($photo)}}" class="fancybox-thumb" rel="fancybox-thumb" title="{{$product->getTranslatedAttribute('name')}}">
+                                                <img src="{{Helper::placeholder($photo)}}" alt="{{$product->name}}">
+                                            </a>
+                                        </figure>
+                                        @endforeach
+                                    </div>
+
                                 </div>
                                 <div class="info-column col-md-7 col-sm-12 col-xs-12">
                                     <div class="details-header">
@@ -65,8 +75,9 @@
 
                                     <!--Tab-->
                                     <div class="tab" id="prod-reviews">
-
-
+                                        <div class="text-center">
+                                            <img style="max-width:80%" class="img img-fluid" src="{{Helper::placeholder($product->nutrition_photo ?? null)}}" />
+                                        </div>
                                     </div>
 
                                 </div>

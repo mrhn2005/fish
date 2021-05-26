@@ -16,12 +16,35 @@
 .search-box-outer {
     border: none;
 }
+
+.main-header {
+    border-bottom: 1px solid #e0e0e0;
+}
 .main-header .main-box .logo-box .logo img {
     max-height: 80px;
 }
 
 .footer-logo img {
     max-height: 80px
+}
+
+.logo-box .logo img{
+    max-height: 60px !important;
+}
+.product-name h5{
+    white-space:nowrap;
+    overflow:hidden;
+    padding:22px 4px;
+}
+
+.product-photos {
+    display: flex;
+    margin:10px;
+}
+.product-photos figure{
+    max-width:80px;
+    margin-right:5px;
+    object-fit: center;
 }
 /* .main-menu .navigation > li {
     padding: 15px 0px;
@@ -45,7 +68,7 @@
 <div class="page-wrapper">
 
     <!-- Preloader -->
-    <div class="preloader"></div>
+    <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div>
 
     <x-header/>
 
@@ -70,6 +93,23 @@
 <script src="{{asset('js/isotope.js')}}"></script>
 <script src="{{asset('js/mixitup.js')}}"></script>
 <script src="{{asset('js/script.js')}}"></script>
+<script>
+    $(document).ready(function() {
+	$(".fancybox-thumb").fancybox({
+		prevEffect	: 'none',
+		nextEffect	: 'none',
+		helpers	: {
+			title	: {
+				type: 'outside'
+			},
+			thumbs	: {
+				width	: 50,
+				height	: 50
+			}
+		}
+	});
+});
+</script>
 </body>
 
 <!-- Mirrored from wp.hostlin.com/tyumen/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Mar 2021 18:19:46 GMT -->

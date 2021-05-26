@@ -41,11 +41,24 @@ class Product extends Model
 
     public function getDecodedPhotosAttribute()
     {
-        return json_decode($this->photos);
+        return json_decode($this->photos) ?: [];
     }
 
     public function getSlugAttribute()
     {
         return Str::slug($this->title);
+    }
+
+    public function getFirstPhotoAttribute()
+    {
+        return $this->decodedPhotos[0] ?? 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+    }
+
+    public function getOtherPhotosAttribute()
+    {
+        $photos = $this->decodedPhotos;
+        array_shift($photos);
+
+        return $photos ?? [];
     }
 }
