@@ -14,7 +14,7 @@ class ProductController extends Controller
         $relatedProducts = Product::withTranslation(app()->getLocale())
             ->where('category_id', $product->category_id)
             ->where('id', '<>', $id)
-            ->limit(24)
+            ->limit(6)
             ->get();
 
         return view('template.products.show', compact('product', 'relatedProducts'));
@@ -27,7 +27,7 @@ class ProductController extends Controller
             ->with('category')
             ->filter(request()->query())
             ->search(request(SearchEnum::TERM))
-            ->paginate(16);
+            ->paginate(24);
 
         return view('template.products.index', compact('products'));
     }
