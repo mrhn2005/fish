@@ -76,7 +76,9 @@
                                     <!--Tab-->
                                     <div class="tab" id="prod-reviews">
                                         <div class="text-center">
+                                            @if($product->nutrition_photo)
                                             <img style="max-width:80%" class="img img-fluid" src="{{Helper::placeholder($product->nutrition_photo ?? null)}}" />
+                                            @endif
                                         </div>
                                     </div>
 
