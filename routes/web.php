@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +26,9 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('products
 Route::get('/blog', [PostController::class, 'index'])->name('posts.index');
 Route::get('/blog/{id}', [PostController::class, 'show'])->name('posts.show');
 
+Route::get('/pages/{pageName}', [PageController::class, 'show'])->name('pages.show');
+
+Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

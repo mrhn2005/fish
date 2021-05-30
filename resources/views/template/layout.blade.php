@@ -71,7 +71,14 @@
     <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div>
 
     <x-header/>
+    @if (session()->has('message'))
+    <div class="container" style="margin-top:15px">
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    </div>
 
+    @endif
     @yield('content')
 
     <x-footer/>
