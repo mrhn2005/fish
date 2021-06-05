@@ -40,29 +40,22 @@
             <div class="contact-form-section">
             	<div class="row clearfix">
                 	<!--Map Column-->
-                	{{-- <div class="map-column col-md-5 col-sm-12 col-xs-12">
+                	<div class="map-column col-md-5 col-sm-12 col-xs-12">
 
                         <div class="map-outer">
 							<!--Map Canvas-->
-                            <div class="map-canvas"
-                                data-zoom="8"
-                                data-lat="-37.817085"
-                                data-lng="144.955631"
-                                data-type="roadmap"
-                                data-hue="#ffc400"
-                                data-title="Envato"
-                                data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
-                            </div>
+                            <iframe src="https://maps.google.it/maps?q=گروه صنایع تحفه&amp;output=embed" width="100%" height="450px" frameborder="1" style="border:2px" allowfullscreen></iframe>
+
                 		</div>
 
-                    </div> --}}
+                    </div>
 
                     <!--form column-->
-                    <div class="form-column col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-column col-md-6 col-sm-12 col-xs-12">
 
                         <!-- Comment Form -->
                         <div class="contact-form">
-                            <h2>SEND US MESSAGE</h2>
+                            <h2>SEND US A MESSAGE</h2>
                             <!--Comment Form-->
                             <form method="post" action="{{route('contacts.store')}}" id="contact-form-2">
                                 @csrf
