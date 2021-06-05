@@ -40,7 +40,7 @@ font-family: 'Pacifico', cursive;*/
 @import url('jquery.fancybox.css');
 @import url('jquery.mCustomScrollbar.min.css');
 
-/*** 
+/***
 
 ====================================================================
 	Reset
@@ -54,7 +54,7 @@ font-family: 'Pacifico', cursive;*/
 	outline:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Global Settings
@@ -63,7 +63,7 @@ font-family: 'Pacifico', cursive;*/
  ***/
 
 body {
-	
+
 	font-size:14px;
 	color:#777777;
 	line-height:1.7em;
@@ -95,7 +95,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 input,button,select,textarea{
-	
+
 }
 
 .gray-bg{
@@ -109,7 +109,7 @@ p{
 }
 
 .strike-through{
-	text-decoration:line-through;	
+	text-decoration:line-through;
 }
 
 .margin-top-40{
@@ -137,7 +137,7 @@ p{
 ul,li{
 	list-style:none;
 	padding:0px;
-	margin:0px;	
+	margin:0px;
 }
 
 .theme-btn{
@@ -150,7 +150,7 @@ ul,li{
 }
 
 .centered{
-	text-align:center;	
+	text-align:center;
 }
 
 /*Btn Style One*/
@@ -243,10 +243,10 @@ ul,li{
 img{
 	display:inline-block;
 	max-width:100%;
-	height:auto;	
+	height:auto;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Scroll To Top style
@@ -274,7 +274,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;		
+	transition:all 300ms ease;
 }
 
 .scroll-to-top:hover{
@@ -282,7 +282,7 @@ img{
 	background:#f8b332;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Header style
@@ -300,7 +300,7 @@ img{
 }
 
 .main-header .auto-container{
-	position:relative;	
+	position:relative;
 }
 
 .main-header .header-top{
@@ -346,11 +346,11 @@ img{
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 500ms ease;
 	-o-transition:all 500ms ease;
-	transition:all 500ms ease;	
+	transition:all 500ms ease;
 }
 
 .main-header .link-nav li a:hover{
-	color:#35af6a;	
+	color:#35af6a;
 }
 
 .main-header .header-top .top-right{
@@ -421,7 +421,7 @@ img{
 	-moz-animation-iteration-count: 1;
 	-op-animation-iteration-count: 1;
 	-webkit-animation-iteration-count: 1;
-	animation-iteration-count: 1;	
+	animation-iteration-count: 1;
 }
 
 .main-header .main-box .outer-container{
@@ -437,7 +437,7 @@ img{
 }
 
 .fixed-header .main-box .logo-box{
-	padding:10px 0px;	
+	padding:10px 0px;
 }
 
 .main-header .main-box .logo-box .logo img{
@@ -447,7 +447,7 @@ img{
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
-	transition:all 300ms ease;	
+	transition:all 300ms ease;
 }
 
 .main-header .nav-toggler button{
@@ -477,7 +477,7 @@ img{
 }
 
 .main-menu .navbar-collapse{
-	padding:0px;	
+	padding:0px;
 }
 
 .main-menu .navigation{
@@ -493,7 +493,7 @@ img{
 }
 
 .fixed-header .main-menu .navigation > li{
-	padding:10px 0px;	
+	padding:10px 0px;
 }
 
 .main-menu .navigation > li > a{
@@ -552,7 +552,7 @@ img{
 
 .main-menu .navigation > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li{
@@ -562,7 +562,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > a{
@@ -583,7 +583,7 @@ img{
 
 .main-menu .navigation > li > ul > li:hover > a{
 	color:#ffffff;
-	background:#f5a64a;	
+	background:#f5a64a;
 }
 
 .main-menu .navigation > li > ul > li.dropdown > a:after{
@@ -599,11 +599,11 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li > ul > li > ul{
@@ -625,7 +625,7 @@ img{
 
 .main-menu .navigation > li > ul > li > ul.from-right{
 	left:auto;
-	right:0px;	
+	right:0px;
 }
 
 .main-menu .navigation > li > ul > li > ul > li{
@@ -635,7 +635,7 @@ img{
 }
 
 .main-menu .navigation > li > ul > li > ul > li:last-child{
-	border-bottom:none;	
+	border-bottom:none;
 }
 
 .main-menu .navigation > li > ul > li > ul > li > a{
@@ -672,17 +672,17 @@ img{
 	font-size:16px;
 	font-weight:normal;
 	text-align:center;
-	z-index:5;	
+	z-index:5;
 }
 
 .main-menu .navigation > li > ul > li > ul > li.dropdown:hover > a:after{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .main-menu .navigation > li.dropdown:hover > ul{
 	visibility:visible;
 	opacity:1;
-	top:100%;	
+	top:100%;
 }
 
 .main-menu .navigation li > ul > li.dropdown:hover > ul{
@@ -693,7 +693,7 @@ img{
 	-moz-transition:all 300ms ease;
 	-webkit-transition:all 500ms ease;
 	-ms-transition:all 300ms ease;
-	-o-transition:all 300ms ease;	
+	-o-transition:all 300ms ease;
 }
 
 .main-menu .navbar-collapse > ul li.dropdown .dropdown-btn{
@@ -931,12 +931,12 @@ img{
 	top:71px;
 	border-top:3px solid #35af6a;
 	padding:0px;
-	width:280px;	
+	width:280px;
 	border-radius:0px;
 }
 
 .main-header .search-box-outer .dropdown-menu{
-	border-top-color:#35af6a;	
+	border-top-color:#35af6a;
 }
 
 .main-header .search-box-outer .dropdown-menu > li{
@@ -946,12 +946,12 @@ img{
 }
 
 .main-header .search-panel .form-container{
-	padding:25px 20px;	
+	padding:25px 20px;
 }
 
 .main-header .search-panel .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .main-header .search-panel input[type="text"],
@@ -964,17 +964,17 @@ img{
 	padding:7px 40px 7px 15px;
 	height:40px;
 	border:1px solid #e0e0e0;
-	background:#ffffff;	
+	background:#ffffff;
 }
 
 .main-header .search-panel input:focus,
 .main-header .search-panel select:focus{
-	border-color:#99cc00;	
+	border-color:#99cc00;
 }
 
 .main-header .search-panel input:focus,
 .main-header .search-panel select:focus{
-	border-color:#35af6a;	
+	border-color:#35af6a;
 }
 
 .main-header .search-panel .search-btn{
@@ -990,7 +990,7 @@ img{
 	cursor:pointer;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Hidden Sidebar style
@@ -1013,7 +1013,7 @@ img{
 }
 
 .hidden-bar .mCSB_inside > .mCSB_container{
-	margin-right:0px;	
+	margin-right:0px;
 }
 
 .hidden-bar.left-align {
@@ -1021,7 +1021,7 @@ img{
 }
 
 .hidden-bar.left-align.visible-sidebar{
-	left:0px;	
+	left:0px;
 }
 
 .hidden-bar.left-align {
@@ -1077,7 +1077,7 @@ img{
 
 .hidden-bar .logo img{
 	display:inline-block;
-	max-width:100%;	
+	max-width:100%;
 }
 
 .hidden-bar .side-menu {
@@ -1106,7 +1106,7 @@ img{
 	position:relative;
 	display:block;
 	font-size:14px;
-	border-bottom: 1px solid rgba(255,255,255,0.15);	
+	border-bottom: 1px solid rgba(255,255,255,0.15);
 }
 
 .hidden-bar .side-menu ul.navigation > li > ul > li:first-child{
@@ -1137,7 +1137,7 @@ img{
 	text-transform:capitalize;
 	padding-left:22px;
 	font-size:14px;
-	color:#aaaaaa;	
+	color:#aaaaaa;
 }
 
 .hidden-bar .side-menu ul.navigation > li.active > a:after{
@@ -1151,11 +1151,11 @@ img{
 }
 
 .hidden-bar .side-menu ul.navigation > li.dropdown > a{
-	padding-left:22px;	
+	padding-left:22px;
 }
 
 .hidden-bar .side-menu ul.navigation > li > ul > li.dropdown > a{
-	padding-left:22px;	
+	padding-left:22px;
 }
 
 .hidden-bar .side-menu ul.navigation > li.dropdown > a:before{
@@ -1169,12 +1169,12 @@ img{
 
 .hidden-bar .side-menu ul.navigation > li > ul > li.dropdown{
 	width:auto;
-	margin-left:22px;	
+	margin-left:22px;
 }
 
 .hidden-bar .side-menu ul.navigation > li > ul > li.dropdown > a,
 .hidden-bar .side-menu ul.navigation > li > ul > li.dropdown > ul > li > a{
-	padding-left:22px;	
+	padding-left:22px;
 }
 
 .hidden-bar .side-menu ul.navigation > li > ul > li.dropdown > a:before{
@@ -1211,14 +1211,14 @@ img{
 	text-align:center;
 	font-size:13px;
 	line-height:20px;
-	color:#999999;	
+	color:#999999;
 }
 
 .hidden-bar .social-links li{
 	position:relative;
 	display:inline-block;
 	line-height:20px;
-	margin:0px 10px;	
+	margin:0px 10px;
 }
 
 .hidden-bar .social-links li a{
@@ -1228,7 +1228,7 @@ img{
 }
 
 .hidden-bar .social-links li a:hover{
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .hidden-bar .copyright-text{
@@ -1240,10 +1240,10 @@ img{
 	text-align:center;
 	font-size:13px;
 	line-height:20px;
-	color:#999999;	
+	color:#999999;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Slider style
@@ -1382,14 +1382,14 @@ img{
 .main-slider .tparrows.preview3 .tp-arr-iwrapper{
 	visibility:hidden;
 	opacity:0;
-	display:none;	
+	display:none;
 }
 
 .main-slider .tp-bannertimer{
-	display:none !important;	
+	display:none !important;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Section Title
@@ -1432,7 +1432,7 @@ img{
 	font-family: 'Pacifico', cursive;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Section Title Two
@@ -1477,7 +1477,7 @@ img{
 	font-family: 'Pacifico', cursive;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Welcome Section
@@ -1558,7 +1558,7 @@ img{
 	display:block;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Main Footer
@@ -1718,7 +1718,7 @@ img{
 	left:0px;
 	bottom:0px;
 	width:40px;
-	border-bottom:1px solid #35af6a;		
+	border-bottom:1px solid #35af6a;
 }
 
 .main-footer .footer-widget{
@@ -1752,11 +1752,11 @@ img{
 	color:#aaaaaa;
 	font-size:14px;
 	padding:0px 0px 0px 0px;
-	text-transform:capitalize;	
+	text-transform:capitalize;
 }
 
 .main-footer .links-widget .list li a:hover{
-	color:#f5a64a;	
+	color:#f5a64a;
 }
 
 .main-footer .gallery-widget .images-outer{
@@ -1784,7 +1784,7 @@ img{
 }
 
 .main-footer .gallery-widget .image-box img:hover{
-	opacity:0.70;	
+	opacity:0.70;
 }
 
 .main-footer .contact-info li span{
@@ -1819,7 +1819,7 @@ img{
 	border-top:1px solid #3b3b3b;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Shop Banner
@@ -1868,7 +1868,7 @@ img{
 	font-family: 'Roboto', sans-serif;
 }
 
-.shop-banner:before{
+/* .shop-banner:before{
 	position:absolute;
 	content:'';
 	right:300px;
@@ -1878,13 +1878,13 @@ img{
 	height:34px;
 	display:inline-block;
 	background:url(../images/resource/curve.jpg) no-repeat;
-}
+} */
 
 .shop-banner.style-two:before{
 	display:none;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Project Section
@@ -2073,7 +2073,7 @@ img{
 	opacity:0.5;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Gallery Section
@@ -2187,7 +2187,7 @@ img{
 	padding-top:10px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Fancy-Box
@@ -2236,7 +2236,7 @@ img{
 .fancybox-next:hover span:before,
 .fancybox-prev:hover span:before{
 	background-color:#ffffff !important;
-	color:#000000;	
+	color:#000000;
 }
 
 .fancybox-type-image .fancybox-close{
@@ -2245,18 +2245,18 @@ img{
 	width:45px;
 	height:45px;
 	background:url(../images/icons/icon-cross.png) center center no-repeat;
-	background-color:rgba(17,17,17,0.50) !important;	
+	background-color:rgba(17,17,17,0.50) !important;
 }
 
 .fancybox-type-image .fancybox-close:hover{
-	background-color:#000000 !important;	
+	background-color:#000000 !important;
 }
 
 .fancybox-type-image .fancybox-skin{
-	padding:0px !important;	
+	padding:0px !important;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Farmer Section
@@ -2422,7 +2422,7 @@ img{
 	font-family: 'Roboto', sans-serif;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Tesimonial Section
@@ -2529,7 +2529,7 @@ img{
 	background-color:#f5a64a;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Blog Section
@@ -2624,7 +2624,7 @@ img{
 	color:#35af6a;
 }
 
-/*** 
+/***
 
 ====================================================================
 	News Blog Two
@@ -2714,7 +2714,7 @@ img{
 	padding-left:0px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	subscribe-style-one
@@ -2838,7 +2838,7 @@ img{
 	bottom:-60px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Cart Banner
@@ -3080,7 +3080,7 @@ img{
 	color:#f5a64a;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Gallery Carousel Section
@@ -3171,7 +3171,7 @@ img{
 }
 
 .news-style-three .inner-box .content-box .upper-box .news-info li a:hover{
-	color:#35af6a;	
+	color:#35af6a;
 }
 
 .news-style-three .inner-box .content-box .upper-box .news-info li a .icon{
@@ -3256,7 +3256,7 @@ img{
 	font-size:24px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Page Title Style
@@ -3286,7 +3286,7 @@ img{
 
 .page-title .auto-container{
 	position:relative;
-	z-index:1;	
+	z-index:1;
 }
 
 .page-title h1{
@@ -3328,18 +3328,18 @@ img{
 }
 
 .page-title .bread-crumb li:first-child{
-	margin-left:0px;	
+	margin-left:0px;
 }
 
 .page-title .bread-crumb li:last-child:before{
-	display:none;	
+	display:none;
 }
 
 .page-title .bread-crumb li a{
-	color:#35af6a;	
+	color:#35af6a;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Team Section
@@ -3352,7 +3352,7 @@ img{
 	padding:150px 0px 120px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Error Section
@@ -3368,7 +3368,7 @@ img{
 
 .error-section .error-image img{
 	display:inline-block;
-	max-width:100%;	
+	max-width:100%;
 }
 
 .error-section h3{
@@ -3393,7 +3393,7 @@ img{
 	color:#f5a64a;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Styled Pagination
@@ -3441,7 +3441,7 @@ img{
 	background-color:#f5a64a;
 	border-color:#f5a64a;
 }
-/*** 
+/***
 
 ====================================================================
 	Shop Section
@@ -3454,7 +3454,7 @@ img{
 	padding:130px 0px 150px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Products Details style
@@ -3464,7 +3464,7 @@ img{
 
 .shop-single{
 	position:relative;
-	padding:150px 0px 100px;	
+	padding:150px 0px 100px;
 }
 
 .product-details .basic-details{
@@ -3487,12 +3487,12 @@ img{
 .product-details .image-column .image-box img{
 	position:relative;
 	display:block;
-	width:100%;	
+	width:100%;
 }
 
 .product-details .basic-details .details-header{
 	position:relative;
-	margin-bottom:12px;	
+	margin-bottom:12px;
 }
 
 .product-details .basic-details .details-header h4{
@@ -3507,7 +3507,7 @@ img{
 }
 
 .product-details .basic-details .details-header h4 a{
-	color:#333333;	
+	color:#333333;
 }
 
 .product-details .basic-details .details-header .rating{
@@ -3518,7 +3518,7 @@ img{
 
 .product-details .basic-details .details-header .rating .fa{
 	display:inline-block;
-	margin-right:2px;	
+	margin-right:2px;
 }
 
 .product-details .basic-details .details-header .item-price{
@@ -3538,7 +3538,7 @@ img{
 }
 
 .product-details .basic-details .text p{
-	margin-bottom:15px;	
+	margin-bottom:15px;
 }
 
 .product-details .basic-details .item-categories{
@@ -3552,7 +3552,7 @@ img{
 	position:relative;
 	color:#35af6a;
 	font-size:14px;
-	text-transform:capitalize;	
+	text-transform:capitalize;
 }
 
 .product-details .basic-details .availablity strong{
@@ -3582,7 +3582,7 @@ img{
 .product-details .basic-details .btn-style-one{
 	top:-3px;
 	margin-bottom:10px;
-	margin-right:5px;	
+	margin-right:5px;
 }
 
 .product-details .basic-details .add-fav:hover{
@@ -3600,7 +3600,7 @@ img{
 .product-details .quantity-spinner{
 	margin-bottom:20px;
 	float:left;
-	margin-right:15px;	
+	margin-right:15px;
 }
 
 .quantity-spinner input{
@@ -3648,10 +3648,10 @@ img{
 	color:#555555;
 	font-size:16px;
 	border:1px solid #e0e0e0;
-	z-index:1;	
+	z-index:1;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Product Tabs Style
@@ -3711,7 +3711,7 @@ img{
 }
 
 .prod-tabs .tabs-container .tab.active-tab{
-	display:block;	
+	display:block;
 }
 
 .prod-tabs .tabs-container .tab p,
@@ -3720,7 +3720,7 @@ img{
 .prod-tabs .tabs-container .tab h4,
 .prod-tabs .tabs-container .tab h5,
 .prod-tabs .tabs-container .tab h6{
-	margin-bottom:15px;	
+	margin-bottom:15px;
 }
 
 .prod-tabs .tabs-container .tab h3{
@@ -3740,7 +3740,7 @@ img{
 }
 
 .prod-tabs .reviews-container{
-	position:relative;	
+	position:relative;
 }
 
 .prod-tabs .reviews-container .review-box{
@@ -3766,14 +3766,14 @@ img{
 	display:block;
 	width:80px;
 	height:80px;
-	border-radius:3px;	
+	border-radius:3px;
 }
 
 .prod-tabs .reviews-container .rev-content{
 	position:relative;
 	padding:15px;
 	border:1px solid #e0e0e0;
-	background:#ffffff;	
+	background:#ffffff;
 }
 
 .prod-tabs .reviews-container .rating{
@@ -3782,7 +3782,7 @@ img{
 }
 
 .prod-tabs .reviews-container .rating .fa{
-	margin-right:1px;	
+	margin-right:1px;
 }
 
 .prod-tabs .reviews-container .rev-info{
@@ -3803,7 +3803,7 @@ img{
 
 .prod-tabs .add-review .rating{
 	position:relative;
-	padding-top:8px;	
+	padding-top:8px;
 }
 
 .prod-tabs .add-review .rating .rate-box{
@@ -3811,13 +3811,13 @@ img{
 	display:inline-block;
 	margin-right:10px;
 	font-size:14px;
-	color:#555555;	
+	color:#555555;
 }
 
 .prod-tabs .add-review .rating .rate-box:hover,
 .prod-tabs .add-review .rating .rate-box:focus,
 .prod-tabs .add-review .rating .rate-box:active{
-	color:#f5a64a;	
+	color:#f5a64a;
 }
 
 .prod-tabs .add-review label{
@@ -3826,16 +3826,16 @@ img{
 	font-size:14px;
 	margin-bottom:5px;
 	font-weight:400;
-	color:#303030;	
+	color:#303030;
 }
 
 .prod-tabs .add-review h3{
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .prod-tabs .add-review .form-group{
 	position:relative;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .prod-tabs .add-review .form-group input[type="text"],
@@ -3928,7 +3928,7 @@ img{
 
 .sidebar .search-box .form-group{
 	position:relative;
-	margin:0px;	
+	margin:0px;
 }
 
 .sidebar .search-box .form-group input[type="text"],
@@ -3950,7 +3950,7 @@ img{
 }
 
 .sidebar .search-box .form-group input:focus{
-	border-color:#f8b332;	
+	border-color:#f8b332;
 }
 
 .sidebar .search-box .form-group button{
@@ -4011,7 +4011,7 @@ img{
 
 .rangeslider-widget .outer-box{
 	position:relative;
-	padding:10px 0px 0px;	
+	padding:10px 0px 0px;
 }
 
 .rangeslider-widget .form-group{
@@ -4019,7 +4019,7 @@ img{
 	color:#777777;
 	font-weight:700;
 	font-size:14px;
-	margin:25px 0px 0px;	
+	margin:25px 0px 0px;
 }
 
 .rangeslider-widget .val-box{
@@ -4037,11 +4037,11 @@ img{
 
 .rangeslider-widget .noUi-connect{
 	background:#d7eadf !important;
-	box-shadow:none;	
+	box-shadow:none;
 }
 
 .rangeslider-widget .noUi-background{
-	background:#ededed !important;	
+	background:#ededed !important;
 }
 
 .rangeslider-widget .noUi-handle{
@@ -4089,7 +4089,7 @@ img{
 
 .sidebar .popular-tags a:hover{
 	background-color:#f8b332;
-	color:#ffffff;	
+	color:#ffffff;
 }
 
 .post-share-options{
@@ -4212,11 +4212,11 @@ img{
 }
 
 .flickr-widget .image-box img:hover{
-	opacity:0.70;	
+	opacity:0.70;
 }
 
 
-/*** 
+/***
 
 ====================================================================
 	Comments Area
@@ -4256,11 +4256,11 @@ img{
 }
 
 .sidebar-page-container .comments-area .comment-box:nth-child(1){
-	padding-top:0px;	
+	padding-top:0px;
 }
 
 .sidebar-page-container .comments-area .comment-box:hover{
-	border-color:#222222;	
+	border-color:#222222;
 }
 
 .sidebar-page-container .comments-area .comment{
@@ -4303,7 +4303,7 @@ img{
 }
 
 .sidebar-page-container .comments-area .reply-comment{
-	padding-left:85px;	
+	padding-left:85px;
 }
 
 .sidebar-page-container .comments-area .comment-box .author-thumb{
@@ -4324,7 +4324,7 @@ img{
 .sidebar-page-container .comments-area .comment-info{
 	color:#3e5773;
 	line-height:24px;
-	font-size:13px;	
+	font-size:13px;
 }
 
 .sidebar-page-container .comments-area .comment-box strong{
@@ -4358,7 +4358,7 @@ img{
 	letter-spacing:1px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Comment Form
@@ -4430,7 +4430,7 @@ img{
 	margin-top:20px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Section
@@ -4492,7 +4492,7 @@ img{
 	line-height:1em;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Form Section
@@ -4518,7 +4518,7 @@ img{
 	height:525px;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Contact Form
@@ -4599,7 +4599,7 @@ img{
 .contact-form input.error,
 .contact-form select.error,
 .contact-form textarea.error{
-	border-color:#ff0000 !important;	
+	border-color:#ff0000 !important;
 }
 
 .contact-form label.error{
@@ -4609,10 +4609,10 @@ img{
 	text-transform:uppercase;
 	font-size:11px;
 	color:#ff0000;
-	font-weight:500;	
+	font-weight:500;
 }
 
-/*** 
+/***
 
 ====================================================================
 	Map Canvas
@@ -4640,7 +4640,7 @@ img{
 	font-weight:600;
 	text-align:center;
 	margin-bottom:5px;
-	color:#181818;	
+	color:#181818;
 }
 
 .map-canvas .map-data .map-content{

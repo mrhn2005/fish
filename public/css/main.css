@@ -1875,7 +1875,7 @@ img{
 	font-family: 'Roboto', sans-serif;
 }
 
-.shop-banner:before{
+/* .shop-banner:before{
 	position:absolute;
 	content:'';
 	right:300px;
@@ -1885,7 +1885,7 @@ img{
 	height:34px;
 	display:inline-block;
 	background:url(../images/resource/curve.jpg) no-repeat;
-}
+} */
 
 .shop-banner.style-two:before{
 	display:none;
