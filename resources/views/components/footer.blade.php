@@ -43,10 +43,6 @@
                     <!--big column-->
                     <div class="big-column col-md-6 col-sm-12 col-xs-12">
                     	<div class="row clearfix">
-
-                            <!--Footer Column-->
-
-
                             <!--Footer Column-->
                         	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div class="footer-widget contact-widget">
@@ -61,6 +57,17 @@
                                 </div>
                             </div>
 
+                            {{-- <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            	<iframe
+                                    src="https://maps.google.it/maps?q=گروه صنایع تحفه&amp;output=embed"
+                                    height="300px"
+                                    frameborder="1"
+                                    style="border:2px"
+                                    loading="lazy"
+                                    allowfullscreen
+                                >
+                                </iframe>
+                            </div> --}}
                         </div>
 					</div>
 
