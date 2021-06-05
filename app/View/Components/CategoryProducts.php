@@ -26,7 +26,7 @@ class CategoryProducts extends Component
     {
         $categories = Category::with([
             'products' => function ($query) {
-                $query->limit(6);
+                $query->where('is_featured', true)->limit(6);
             }
         ])->limit(7)->get();
 

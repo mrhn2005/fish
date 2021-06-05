@@ -46,6 +46,10 @@
     margin-right:5px;
     object-fit: center;
 }
+
+.product-name a:hover {
+    color: #f5a64a;
+}
 /* .main-menu .navigation > li {
     padding: 15px 0px;
 }
