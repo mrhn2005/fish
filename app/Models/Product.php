@@ -12,7 +12,7 @@ use Illuminate\Support\Str;
 class Product extends Model
 {
     use Translatable, Resizable;
-    protected $translatable = ['name', 'scientific_name', 'description', 'excerpt'];
+    protected $translatable = ['name', 'scientific_name', 'description', 'excerpt', 'nutrition_facts', 'product_features'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -46,7 +46,7 @@ class Product extends Model
 
     public function getSlugAttribute()
     {
-        return Str::slug($this->title);
+        return Str::slug($this->name);
     }
 
     public function getFirstPhotoAttribute()

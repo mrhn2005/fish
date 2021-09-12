@@ -58,8 +58,9 @@
 
                                 <!--Tab Btns-->
                                 <ul class="tab-btns tab-buttons clearfix">
-                                    <li data-tab="#prod-description" class="tab-btn active-btn">description</li>
-                                    <li data-tab="#prod-reviews" class="tab-btn">Features</li>
+                                    <li data-tab="#prod-description" class="tab-btn active-btn">Description</li>
+                                    <li data-tab="#nutrition-facts" class="tab-btn">Nutrition facts</li>
+                                    <li data-tab="#product-features" class="tab-btn">Product features</li>
                                 </ul>
 
                                 <!--Tabs Content-->
@@ -74,11 +75,16 @@
                                     </div>
 
                                     <!--Tab-->
-                                    <div class="tab" id="prod-reviews">
-                                        <div class="text-center">
-                                            @if($product->nutrition_photo)
-                                            <img style="max-width:80%" class="img img-fluid" src="{{Helper::placeholder($product->nutrition_photo ?? null)}}" />
-                                            @endif
+                                    <div class="tab" id="nutrition-facts">
+                                        <div class="content">
+                                            {!! $product->getTranslatedAttribute('nutrition_facts') !!}
+                                        </div>
+                                    </div>
+
+                                    <!--Tab-->
+                                    <div class="tab" id="product-features">
+                                        <div class="content">
+                                            {!! $product->getTranslatedAttribute('product_features') !!}
                                         </div>
                                     </div>
 
