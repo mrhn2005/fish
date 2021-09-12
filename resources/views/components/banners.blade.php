@@ -10,8 +10,8 @@
                         <img src="{{Helper::placeholder($banner->photo)}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                         <div class="tp-caption sfb sfb tp-resizeme"
-                        data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="0"
+                        data-x="{{$banner->horizontal_position}}" data-hoffset="{{$banner->horizontal_offset}}"
+                        data-y="{{$banner->vertical_position}}" data-voffset="{{$banner->vertical_offset}}"
                         data-speed="1500"
                         data-start="500"
                         data-easing="easeOutExpo"
@@ -25,8 +25,8 @@
                         </div>
 
                         <div class="tp-caption sfb sfb tp-resizeme"
-                        data-x="center" data-hoffset="0"
-                        data-y="center" data-voffset="80"
+                        data-x="{{$banner->horizontal_position}}" data-hoffset="{{$banner->horizontal_offset}}"
+                        data-y="{{$banner->vertical_position}}" data-voffset="{{$banner->vertical_offset + 80}}"
                         data-speed="1500"
                         data-start="1000"
                         data-easing="easeOutExpo"
