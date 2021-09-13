@@ -23,7 +23,7 @@ class Banners extends Component
      */
     public function render()
     {
-        $banners = Banner::where('location', 'top')->orderBy('position')->limit(3)->get();
+        $banners = Banner::where('location', 'top')->orderBy('position')->limit(4)->get();
 
         return view('components.banners', compact('banners'));
     }
