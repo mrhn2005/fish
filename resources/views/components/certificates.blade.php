@@ -5,15 +5,8 @@
     </div>
     <div class="row clearfix">
         @foreach ($certificates as $certificate)
-            <div class="col-md-3 shop-item">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <a href="{{Helper::placeholder($certificate->photo)}}" class="fancybox-thumb" rel="fancybox-thumb" title="{{$certificate->getTranslatedAttribute('title')}}">
-                            <img src="{{Helper::placeholder($certificate->photo)}}" alt="{{$certificate->title}}">
-                        </a>
-                    </div>
-                </div>
-
+            <div class="col-md-2 shop-item">
+                <img src="{{Helper::placeholder($certificate->photo)}}" alt="{{$certificate->title}}" class="image-fluid mx-5">
             </div>
         @endforeach
     </div>

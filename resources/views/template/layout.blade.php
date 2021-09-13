@@ -81,7 +81,7 @@
 <div class="page-wrapper">
 
     <!-- Preloader -->
-    <!-- <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div> -->
+    <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div>
 
     <x-header/>
     @if (session()->has('message'))
