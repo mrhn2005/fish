@@ -3,15 +3,7 @@
     @foreach ($items as $item)
     <li class="current dropdown">
         <a href="{{$item->link()}}">{{$item->getTranslatedAttribute('title')}}</a>
-        <ul>
-            @foreach ($item->children as $child)
-                <li>
-                    <a href="{{$child->link()}}">
-                    {{$child->getTranslatedAttribute('title')}}
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+        @include('template.menus.sub-menu', ['item' => $item])
     </li>
     @endforeach
 

@@ -10,8 +10,8 @@
 <link href="{{asset('css/revolution-slider.css')}}" rel="stylesheet">
 <link href="{{asset('css/style.css')}}" rel="stylesheet">
 <link href="{{asset('css/responsive.css')}}" rel="stylesheet">
-<link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
-<link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
+<link rel="icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 <style>
 .search-box-outer {
     border: none;
@@ -72,7 +72,7 @@
 <div class="page-wrapper">
 
     <!-- Preloader -->
-    <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div>
+    <!-- <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div> -->
 
     <x-header/>
     @if (session()->has('message'))
