@@ -6,7 +6,7 @@
     <div class="row clearfix">
         @foreach ($certificates as $certificate)
             <div class="col-md-2 shop-item">
-                <img src="{{Helper::placeholder($certificate->photo)}}" alt="{{$certificate->title}}" class="image-fluid mx-5">
+                <img src="{{Helper::placeholder($certificate->photo)}}" alt="{{$certificate->title}}" class="img-responsive" style="height:110px">
             </div>
         @endforeach
     </div>
