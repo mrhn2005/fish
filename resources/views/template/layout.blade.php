@@ -50,6 +50,15 @@
 .product-name a:hover {
     color: #f5a64a;
 }
+
+.sec-title:before {
+    background:none;
+}
+
+.sec-title-two:before {
+    background:none;
+}
+
 /* .main-menu .navigation > li {
     padding: 15px 0px;
 }
