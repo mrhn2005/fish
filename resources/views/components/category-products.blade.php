@@ -12,7 +12,7 @@
             <div class="mixitup-gallery">
 
                 <!--Filter-->
-                <div class="filters clearfix">
+                <!-- <div class="filters clearfix">
                     <ul class="filter-tabs filter-btns text-center">
                         <li class="filter active" data-role="button" data-filter="all">{{trans('labels.all')}}</li>
                         @foreach ($categories as $category)
@@ -21,7 +21,7 @@
                             </li>
                         @endforeach
                     </ul>
-                </div>
+                </div> -->
 
                 <div class="filter-list row clearfix">
                     @foreach ($categories->pluck('products')->flatten(1)->shuffle() as $product)
