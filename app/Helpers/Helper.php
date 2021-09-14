@@ -46,7 +46,9 @@ class Helper
             }
         }
 
-        return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+        return Cache::rememberForever('placeholder', function () {
+            return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+        });
     }
 
     public static function getThumbnail(Model $model, string $size): string
@@ -55,7 +57,9 @@ class Helper
             return Voyager::image($model->getThumbnail($model->decodedPhotos[0], $size));
         }
 
-        return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+        return Cache::rememberForever('placeholder', function () {
+            return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+        });
     }
 
     public static function getThumbnailSingle(Model $model, string $size): string

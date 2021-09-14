@@ -59,6 +59,9 @@
     background:none;
 }
 
+.contact-info-section .inner-box {
+    height: 300px;
+}
 /* .main-menu .navigation > li {
     padding: 15px 0px;
 }

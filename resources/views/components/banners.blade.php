@@ -26,7 +26,7 @@
 
                         <div class="tp-caption sfb sfb tp-resizeme"
                         data-x="{{$banner->horizontal_position}}" data-hoffset="{{$banner->horizontal_offset}}"
-                        data-y="{{$banner->vertical_position}}" data-voffset="{{$banner->vertical_offset + 80}}"
+                        data-y="{{$banner->vertical_position}}" data-voffset="{{$banner->vertical_offset + $banner->subtitle_offset}}"
                         data-speed="1500"
                         data-start="1000"
                         data-easing="easeOutExpo"
