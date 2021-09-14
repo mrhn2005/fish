@@ -6,7 +6,7 @@
         	<!--Sec Title Two-->
             <div class="sec-title-two">
                 <h2>Our Products</h2>
-                <div class="title-text">We deliver to your door</div>
+                <!-- <div class="title-text">We deliver to your door</div> -->
             </div>
         	<!--Sortable Gallery-->
             <div class="mixitup-gallery">
