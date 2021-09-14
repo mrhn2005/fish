@@ -16,7 +16,7 @@
                     <ul class="filter-tabs filter-btns text-center">
                         <li class="filter active" data-role="button" data-filter="all">{{trans('labels.all')}}</li>
                         @foreach ($categories as $category)
-                            <li class="filter {{$loop->first ? 'active' : ''}}" data-role="button" data-filter=".{{$category->slug}}">
+                            <li class="filter {{$loop->first ? 'active' : ''}}" data-role="button" data-filter=".category-{{$category->id}}">
                                 {{$category->getTranslatedAttribute('name')}}
                             </li>
                         @endforeach
@@ -24,14 +24,12 @@
                 </div>
 
                 <div class="filter-list row clearfix">
-                    @foreach ($categories as $category)
-                        @foreach ($category->products as $product)
+                    @foreach ($categories->pluck('products')->flatten(1)->shuffle() as $product)
                         <!--Shop Item-->
-                        <div class="shop-item col-md-4 col-sm-6 col-xs-12 mix mix_all {{$category->slug}}">
+                        <div class="shop-item col-md-4 col-sm-6 col-xs-12 mix mix_all category-{{$product->category_id}}">
                             @include('template.partials.product-card', ['product' => $product])
                         </div>
                         <!--Shop Item-->
-                        @endforeach
                     @endforeach
                 </div>
 
