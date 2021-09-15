@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageController;
@@ -29,6 +30,10 @@ Route::get('/blog/{id}', [PostController::class, 'show'])->name('posts.show');
 Route::get('/pages/{pageName}', [PageController::class, 'show'])->name('pages.show');
 
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('deploy', [AdminController::class, 'deploy']);
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
