@@ -46,7 +46,7 @@ class Helper
             }
         }
 
-        return Cache::rememberForever('placeholder1', function () {
+        return Cache::rememberForever('placeholder2', function () {
             return 'https://via.placeholder.com/700x448.jpg?text=' . config('app.name');
         });
     }
@@ -57,7 +57,7 @@ class Helper
             return Voyager::image($model->getThumbnail($model->decodedPhotos[0], $size));
         }
 
-        return Cache::rememberForever('placeholder1', function () {
+        return Cache::rememberForever('placeholder2', function () {
             return 'https://via.placeholder.com/700x448.jpg?text=' . config('app.name');
         });
     }
