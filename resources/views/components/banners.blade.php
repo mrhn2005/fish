@@ -7,7 +7,7 @@
                 <ul>
                     @foreach ($banners as $banner)
                     <li data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/main-slider/image-1.jpg"  data-saveperformance="off"  data-title="Awesome Title Here">
-                        <img src="{{Helper::placeholder($banner->photo)}}"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                        <img src="{{Helper::placeholder($banner->photo)}}"  alt="{{$banner->title}}"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 
                         <div class="tp-caption sfb sfb tp-resizeme"
                         data-x="{{$banner->horizontal_position}}" data-hoffset="{{$banner->horizontal_offset}}"

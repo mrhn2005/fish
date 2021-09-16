@@ -8,7 +8,7 @@
             	<div class="outer-container clearfix">
                     <!--Logo Box-->
                     <div class="logo-box">
-                        <div class="logo"><a href="{{route('home')}}"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt=""></a></div>
+                        <div class="logo"><a href="{{route('home')}}"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt="logo"></a></div>
                     </div>
 
                     <!--Nav Outer-->
