@@ -1,5 +1,6 @@
 <div class="inner-box">
-    <div class="image-box"><img src="{{ Helper::getThumbnail($product, 'medium') }}" alt="">
+    <div class="image-box">
+        <img src="{{ Helper::getThumbnail($product, 'medium') }}" alt="{{$product->slug}}">
         <div class="overlay-box">
             <div class="option-box">
                 <a href="{{route('products.show', ['id' => $product->id, 'slug' => $product->slug])}}" class="like-btn"><span
