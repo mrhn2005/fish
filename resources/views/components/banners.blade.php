@@ -36,7 +36,7 @@
                         data-endelementdelay="0.3"
                         data-endspeed="1200"
                         data-endeasing="Power4.easeIn">
-                            <a href="{{$banner->url}}" class="theme-btn btn-style-one">{{$banner->getTranslatedAttribute('subtitle')}}</a>
+                            <a href="{{App::getLocale() . $banner->url}}" class="theme-btn btn-style-one">{{$banner->getTranslatedAttribute('subtitle')}}</a>
                         </div>
 
                         </li>

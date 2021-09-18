@@ -43,7 +43,7 @@
                                     <div class="text">
                                         {{$product->getTranslatedAttribute('excerpt')}}
                                     </div>
-                                    <div class="item-categories">Category:&ensp; <a href="{{route('products.index', [SearchEnum::CATEGORY_ID => optional($product->category)->id])}}">{{optional($product->category)->getTranslatedAttribute('name')}}</a></div>
+                                    <div class="item-categories">Category:&ensp; <a href="{{route(App::getLocale() . '.products.index', [SearchEnum::CATEGORY_ID => optional($product->category)->id])}}">{{optional($product->category)->getTranslatedAttribute('name')}}</a></div>
 
                                 </div>
                             </div>

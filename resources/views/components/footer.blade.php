@@ -12,7 +12,7 @@
                             <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div class="footer-widget about-widget">
                                 	<div class="widget-content">
-                                    	<div class="footer-logo"><a href="{{route('home')}}"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt="logo"></a></div>
+                                    	<div class="footer-logo"><a href="{{route(App::getLocale() . '.home')}}"><img src="{{Helper::placeholder(setting('site.logo'))}}" alt="logo"></a></div>
                                         <div class="text">{{setting(App::getLocale() . '.footer-desc')}}</div>
                                         <ul class="social-icon-one">
                                             @foreach ($socials as $social)

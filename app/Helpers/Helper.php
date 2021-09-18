@@ -95,4 +95,15 @@ class Helper
         $content = preg_replace('~<img[^>]*\K(?=src)~i', 'data-', $content);
         return $content;
     }
+
+    public static function changeLanguage(string $locale)
+    {
+        if (App::getLocale() == $locale) {
+            return '#';
+        }
+
+        $routeImplode = explode('/', request()->path(), 2);
+        $routeImplode[0] = $locale;
+        return '/' . implode('/', $routeImplode);
+    }
 }

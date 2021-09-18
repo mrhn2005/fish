@@ -54,9 +54,9 @@
 
                         @foreach ($latestPosts as $latestPost)
                         <article class="post">
-                            <figure class="post-thumb"><a href="{{route('posts.show', $latestPost->id)}}"><img src="{{Helper::getThumbnailSingle($latestPost, 'small')}}" alt="{{$latestPost->title}}"></a></figure>
+                            <figure class="post-thumb"><a href="{{route(App::getLocale() . '.posts.show', $latestPost->id)}}"><img src="{{Helper::getThumbnailSingle($latestPost, 'small')}}" alt="{{$latestPost->title}}"></a></figure>
                             <div class="post-info">{{$latestPost->created_at->diffForHumans()}}</div>
-                            <h4><a href="{{route('posts.show', $latestPost->id)}}">{{Str::limit($latestPost->getTranslatedAttribute('excerpt'), 100)}}</a></h4>
+                            <h4><a href="{{route(App::getLocale() . '.posts.show', $latestPost->id)}}">{{Str::limit($latestPost->getTranslatedAttribute('excerpt'), 100)}}</a></h4>
                         </article>
                         @endforeach
                     </div>
