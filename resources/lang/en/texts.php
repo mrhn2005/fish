@@ -19,4 +19,6 @@ return [
     'description' => 'Description',
     'nutrition_facts' => 'Nutrition facts',
     'product_features' => 'Product features',
+    'our_certificates' => 'Our Certificates',
+    'see_all_products' => 'See All Products'
 ];

@@ -33,6 +33,9 @@
                     @endforeach
                 </div>
 
+                <div class="text-center">
+                    <a class="theme-btn btn-style-one" href="{{route(App::getLocale() . '.products.index')}}">{{trans('texts.see_all_products')}}</a>
+                </div>
             </div>
             <!--End Sortable Gallery-->
         </div>
