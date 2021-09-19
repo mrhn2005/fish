@@ -57,7 +57,7 @@
                         <div class="contact-form">
                             <h2>SEND US A MESSAGE</h2>
                             <!--Comment Form-->
-                            <form method="post" action="{{route('contacts.store')}}" id="contact-form-2">
+                            <form method="post" action="{{route(App::getLocale() . '.contacts.store')}}" id="contact-form-2">
                                 @csrf
                                 <div class="form-group">
                                 	<input type="text" name="username" placeholder="Name *" required>

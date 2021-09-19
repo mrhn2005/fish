@@ -8,7 +8,7 @@
             </div>
             <ul class="list">
                 @foreach ($categories as $category)
-                <li><a href="{{route('products.index', [SearchEnum::CATEGORY_ID => $category->id])}}">{{$category->getTranslatedAttribute('name')}} &ensp; ({{$category->products_count}})</a></li>
+                <li><a href="{{route(App::getLocale() . '.products.index', [SearchEnum::CATEGORY_ID => $category->id])}}">{{$category->getTranslatedAttribute('name')}} &ensp; ({{$category->products_count}})</a></li>
                 @endforeach
             </ul>
         </div>

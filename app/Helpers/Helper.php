@@ -46,8 +46,8 @@ class Helper
             }
         }
 
-        return Cache::rememberForever('placeholder', function () {
-            return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+        return Cache::rememberForever('placeholder2', function () {
+            return 'https://via.placeholder.com/700x448.jpg?text=' . config('app.name');
         });
     }
 
@@ -57,8 +57,8 @@ class Helper
             return Voyager::image($model->getThumbnail($model->decodedPhotos[0], $size));
         }
 
-        return Cache::rememberForever('placeholder', function () {
-            return 'https://via.placeholder.com/300x300.png?text=' . config('app.name');
+        return Cache::rememberForever('placeholder2', function () {
+            return 'https://via.placeholder.com/700x448.jpg?text=' . config('app.name');
         });
     }
 
@@ -94,5 +94,16 @@ class Helper
     {
         $content = preg_replace('~<img[^>]*\K(?=src)~i', 'data-', $content);
         return $content;
+    }
+
+    public static function changeLanguage(string $locale)
+    {
+        if (App::getLocale() == $locale) {
+            return '#';
+        }
+
+        $routeImplode = explode('/', request()->path(), 2);
+        $routeImplode[0] = $locale;
+        return '/' . implode('/', $routeImplode);
     }
 }

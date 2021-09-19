@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <!-- Mirrored from wp.hostlin.com/tyumen/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Mar 2021 18:15:05 GMT -->
 <head>
 <meta charset="utf-8">
@@ -84,7 +83,7 @@
 <div class="page-wrapper">
 
     <!-- Preloader -->
-    <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div>
+    <!-- <div class="preloader" style="background-image:url({{Helper::placeholder(setting('site.loader')) ?: '../images/icons/preloader.gif'}});"></div> -->
 
     <x-header/>
     @if (session()->has('message'))

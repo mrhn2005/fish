@@ -1,8 +1,9 @@
 <div class="inner-box">
-    <div class="image-box"><img src="{{ Helper::getThumbnail($product, 'medium') }}" alt="">
+    <div class="image-box">
+        <img src="{{ Helper::getThumbnail($product, 'medium') }}" alt="{{$product->slug}}">
         <div class="overlay-box">
             <div class="option-box">
-                <a href="{{route('products.show', ['id' => $product->id, 'slug' => $product->slug])}}" class="like-btn"><span
+                <a href="{{route(App::getLocale() . '.products.show', ['id' => $product->id, 'slug' => $product->slug])}}" class="like-btn"><span
                         class="fa fa-eye"></span></a>
             </div>
             <!--lower box-->
@@ -21,7 +22,7 @@
     </div>
     <div class="text-center product-name">
         <h5><a
-                href="{{route('products.show', ['id' => $product->id, 'slug' => $product->slug])}}">{{$product->getTranslatedAttribute('name')}}</a>
+                href="{{route(App::getLocale() . '.products.show', ['id' => $product->id, 'slug' => $product->slug])}}">{{$product->getTranslatedAttribute('name')}}</a>
         </h5>
     </div>
 </div>

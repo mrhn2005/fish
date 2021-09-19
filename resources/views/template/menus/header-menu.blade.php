@@ -12,7 +12,7 @@
         <ul>
         @foreach (config('voyager.multilingual.locales') as $locale)
             <li>
-                <a href="#">
+                <a href="{{Helper::changeLanguage($locale)}}">
                     {{$locale}}
                 </a>
             </li>

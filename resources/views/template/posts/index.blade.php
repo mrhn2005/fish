@@ -12,7 +12,7 @@
             <div class="news-style-three col-lg-4 col-md-6 col-sm-6 col-xs-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <a href="{{route('posts.show', $post->id)}}"><img src="{{Helper::getThumbnailSingle($post, 'medium')}}" alt="{{$post->title}}" /></a>
+                        <a href="{{route(App::getLocale() . '.posts.show', $post->id)}}"><img src="{{Helper::getThumbnailSingle($post, 'medium')}}" alt="{{$post->title}}" /></a>
                     </div>
                     <!--Content Box-->
                     <div class="content-box">
@@ -24,9 +24,9 @@
 
                         <div class="lower-box">
                             <div class="title">{{optional($post->category)->getTranslatedAttribute('name')}}</div>
-                            <h3><a href="{{route('posts.show', $post->id)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
+                            <h3><a href="{{route(App::getLocale() . '.posts.show', $post->id)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
                             <div class="text">{{Str::limit($post->getTranslatedAttribute('excerpt'), 100)}}</div>
-                            <a href="{{route('posts.show', $post->id)}}" class="read-more">Read More</a>
+                            <a href="{{route(App::getLocale() . '.posts.show', $post->id)}}" class="read-more">Read More</a>
                         </div>
 
                     </div>
