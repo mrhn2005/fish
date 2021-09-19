@@ -5,8 +5,8 @@
     </div>
     <div class="row clearfix">
         @foreach ($certificates as $certificate)
-            <div class="col-md-2 col-sm-4 col-xs-6 shop-item">
-                <img src="{{Helper::placeholder($certificate->photo)}}" alt="{{$certificate->title}}" class="img-responsive" style="max-height:110px">
+            <div class="col-md-2 col-sm-4 col-xs-6 shop-item text-center">
+                <img src="{{Helper::placeholder($certificate->photo)}}" alt="{{$certificate->title}}" class="img-responsive" style="max-height:110px; margin:auto">
             </div>
         @endforeach
     </div>
