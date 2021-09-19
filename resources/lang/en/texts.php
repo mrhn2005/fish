@@ -7,7 +7,7 @@ return [
     'contact' => 'Contact',
     'address' => 'Address',
     'call_us' => 'Call Us',
-    'mail_ud' => 'Mail Us',
+    'mail_us' => 'Mail Us',
     'send_us_a_message' => 'SEND US A MESSAGE',
     'name' => 'Name',
     'email' => 'Email',
