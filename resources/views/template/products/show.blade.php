@@ -97,7 +97,7 @@
                         @if($relatedProducts->count())
                         <!--Related Post-->
                         <div class="related-posts">
-                        	<h2>RELATED PRODUCTS</h2>
+                        	<h2>{{trans('texts.related_products')}}</h2>
                             <div class="row clearfix">
                                 @foreach ($relatedProducts as $relatedProduct)
                                 <!--Shop Item-->

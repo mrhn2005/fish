@@ -27,4 +27,5 @@ return [
     'see_all_products' => 'See All Products',
     'search_here' => 'Search Here',
     'recent_posts' => 'Recent Posts',
+    'related_products' => 'RELATED PRODUCTS',
 ];

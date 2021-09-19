@@ -27,4 +27,5 @@ return [
     'see_all_products' => 'Посмотреть все продукты',
     'search_here' => 'Поищи здесь',
     'recent_posts' => 'Недавние Посты',
+    'related_products' => 'сопутствующие товары',
 ];
