@@ -26,7 +26,7 @@
                             <!--Footer Column-->
                         	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div class="footer-widget links-widget">
-                                	<h2>INFORMATION</h2>
+                                	<h2>{{trans('texts.information')}}</h2>
                                     <div class="widget-content">
                                     	<ul class="list">
                                             @foreach (menu('footer', '_json') as $item)

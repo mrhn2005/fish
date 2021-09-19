@@ -28,4 +28,5 @@ return [
     'search_here' => 'Search Here',
     'recent_posts' => 'Recent Posts',
     'related_products' => 'RELATED PRODUCTS',
+    'information' => 'Information',
 ];
