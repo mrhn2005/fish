@@ -21,7 +21,7 @@
                     	<div class="inner-box">
                         	<div class="icon-box"><span class="icon flaticon-headphones"></span></div>
                             <h3>Call Us</h3>
-                            <div class="text">{{setting(App::getLocale() . '.phone')}}</div>
+                            <div class="text">{!!setting('site.phones')!!}</div>
                             <div class="large-icon"><span class="icon flaticon-headphones"></span></div>
                         </div>
                     </div>
