@@ -43,7 +43,7 @@
                                     <div class="text">
                                         {{$product->getTranslatedAttribute('excerpt')}}
                                     </div>
-                                    <div class="item-categories">Category:&ensp; <a href="{{route(App::getLocale() . '.products.index', [SearchEnum::CATEGORY_ID => optional($product->category)->id])}}">{{optional($product->category)->getTranslatedAttribute('name')}}</a></div>
+                                    <div class="item-categories">{{trans('texts.category')}}:&ensp; <a href="{{route(App::getLocale() . '.products.index', [SearchEnum::CATEGORY_ID => optional($product->category)->id])}}">{{optional($product->category)->getTranslatedAttribute('name')}}</a></div>
 
                                 </div>
                             </div>
@@ -58,9 +58,9 @@
 
                                 <!--Tab Btns-->
                                 <ul class="tab-btns tab-buttons clearfix">
-                                    <li data-tab="#prod-description" class="tab-btn active-btn">Description</li>
-                                    <li data-tab="#nutrition-facts" class="tab-btn">Nutrition facts</li>
-                                    <li data-tab="#product-features" class="tab-btn">Product features</li>
+                                    <li data-tab="#prod-description" class="tab-btn active-btn">{{trans('texts.description')}}</li>
+                                    <li data-tab="#nutrition-facts" class="tab-btn">{{trans('texts.nutrition_facts')}}</li>
+                                    <li data-tab="#product-features" class="tab-btn">{{trans('texts.product_features')}}</li>
                                 </ul>
 
                                 <!--Tabs Content-->

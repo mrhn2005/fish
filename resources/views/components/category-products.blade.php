@@ -5,7 +5,7 @@
 
         	<!--Sec Title Two-->
             <div class="sec-title-two">
-                <h2>Our Products</h2>
+                <h2>{{trans('texts.our_products')}}</h2>
                 <!-- <div class="title-text">We deliver to your door</div> -->
             </div>
         	<!--Sortable Gallery-->

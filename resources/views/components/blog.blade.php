@@ -4,8 +4,8 @@
     	<div class="auto-container">
         	<!--Sec Title Two-->
             <div class="sec-title-two">
-                <h2>Our Blog</h2>
-                <div class="title-text">Latest News</div>
+                <h2>{{trans('texts.our_blog')}}</h2>
+                <div class="title-text">{{trans('texts.latest_news')}}</div>
             </div>
 
             <div class="row clearfix">

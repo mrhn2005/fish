@@ -12,7 +12,7 @@
                     @endforeach
             </div>
             <div class="text-center">
-                {!! $products->links() !!}
+                {!! $products->appends(request()->except('page'))->links() !!}
             </div>
         </div>
     </section>

@@ -46,12 +46,12 @@
                             <!--Footer Column-->
                         	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             	<div class="footer-widget contact-widget">
-                                	<h2>Contact</h2>
+                                	<h2>{{trans('text.contact')}}</h2>
                                     <div class="widget-content">
                                         <ul class="contact-info">
-                                        	<li><span>Address</span> {{setting(App::getLocale() . '.address')}}</li>
-                                            <li><span>Call Us</span> {{setting(App::getLocale() . '.phone')}}</li>
-                                            <li><span>Mail Us</span> {{setting('site.email')}}</li>
+                                        	<li><span>{{trans('text.address')}}</span> {{setting(App::getLocale() . '.address')}}</li>
+                                            <li><span>{{trans('text.call_us')}}</span> {{setting(App::getLocale() . '.phone')}}</li>
+                                            <li><span>{{trans('text.mail_us')}}</span> {{setting('site.email')}}</li>
                                         </ul>
                                     </div>
                                 </div>

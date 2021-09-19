@@ -26,7 +26,7 @@
                             <div class="title">{{optional($post->category)->getTranslatedAttribute('name')}}</div>
                             <h3><a href="{{route(App::getLocale() . '.posts.show', $post->id)}}">{{$post->getTranslatedAttribute('title')}}</a></h3>
                             <div class="text">{{Str::limit($post->getTranslatedAttribute('excerpt'), 100)}}</div>
-                            <a href="{{route(App::getLocale() . '.posts.show', $post->id)}}" class="read-more">Read More</a>
+                            <a href="{{route(App::getLocale() . '.posts.show', $post->id)}}" class="read-more">{{trans('texts.read_more')}}</a>
                         </div>
 
                     </div>

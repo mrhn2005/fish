@@ -61,6 +61,14 @@
 .contact-info-section .inner-box {
     height: 300px;
 }
+
+@media only screen and (max-width: 767px) {
+    .main-slider .tp-caption {
+        display: block !important;
+    }
+}
+
+
 /* .main-menu .navigation > li {
     padding: 15px 0px;
 }
