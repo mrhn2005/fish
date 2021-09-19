@@ -20,5 +20,11 @@ return [
     'nutrition_facts' => 'Nutrition facts',
     'product_features' => 'Product features',
     'our_certificates' => 'Our Certificates',
-    'see_all_products' => 'See All Products'
+    'see_all_products' => 'See All Products',
+    'see_all_posts' => 'See All Posts',
+    'search_here' => 'Search Here',
+    'product_categories' => 'Product Categories',
+    'see_all_products' => 'See All Products',
+    'search_here' => 'Search Here',
+    'recent_posts' => 'Recent Posts',
 ];

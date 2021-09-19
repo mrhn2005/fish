@@ -40,23 +40,23 @@
 
                     <!--search box-->
                     <div class="sidebar-widget search-box">
-                        <form method="post" action="#">
+                        <form method="get" action="{{route(App::getLocale() . '.posts.index')}}">
                             <div class="form-group">
-                                <input type="search" name="search-field" value="" placeholder="Search" required="">
-                                <button type="submit"><span class="icon fa fa-search"></span></button>
+                                <input type="search" name="{{SearchEnum::TERM}}" value="" placeholder="{{trans('texts.search_here')}}" required>
+                                <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                             </div>
                         </form>
                     </div>
 
                     <!-- Popular Posts -->
                     <div class="sidebar-widget popular-posts">
-                        <div class="sidebar-title"><h2>RECENT POSTS</h2></div>
+                        <div class="sidebar-title"><h2>{{trans('texts.recent_posts')}}</h2></div>
 
                         @foreach ($latestPosts as $latestPost)
                         <article class="post">
                             <figure class="post-thumb"><a href="{{route(App::getLocale() . '.posts.show', $latestPost->id)}}"><img src="{{Helper::getThumbnailSingle($latestPost, 'small')}}" alt="{{$latestPost->title}}"></a></figure>
                             <div class="post-info">{{$latestPost->created_at->diffForHumans()}}</div>
-                            <h4><a href="{{route(App::getLocale() . '.posts.show', $latestPost->id)}}">{{Str::limit($latestPost->getTranslatedAttribute('excerpt'), 100)}}</a></h4>
+                            <h4><a href="{{route(App::getLocale() . '.posts.show', $latestPost->id)}}">{{Str::limit($latestPost->getTranslatedAttribute('title'), 100)}}</a></h4>
                         </article>
                         @endforeach
                     </div>

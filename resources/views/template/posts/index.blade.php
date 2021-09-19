@@ -35,7 +35,6 @@
             @endforeach
 
         </div>
-
     </div>
 </section>
 <!--End Blog Section-->

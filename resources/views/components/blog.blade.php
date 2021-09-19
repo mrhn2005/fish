@@ -21,7 +21,7 @@
                                 <div class="title">{{optional($firstPost->category)->getTranslatedAttribute('name')}}</div>
                                 <h3><a href="{{route(App::getLocale() . '.posts.show', $firstPost->id)}}">{{$firstPost->getTranslatedAttribute('title')}}</a></h3>
                                 <div class="text">{{Str::limit($firstPost->getTranslatedAttribute('excerpt'), 90)}} </div>
-                                <a href="{{route(App::getLocale() . '.posts.show', $firstPost->id)}}" class="read-more">Read More</a>
+                                <a href="{{route(App::getLocale() . '.posts.show', $firstPost->id)}}" class="read-more">{{trans('texts.read_more')}}</a>
                             </div>
                         </div>
                 	</div>
@@ -60,6 +60,9 @@
                 @endif
             </div>
 
+            <div class="text-center">
+                <a class="theme-btn btn-style-one" href="{{route(App::getLocale() . '.posts.index')}}">{{trans('texts.see_all_posts')}}</a>
+            </div>
         </div>
     </section>
 </div>
