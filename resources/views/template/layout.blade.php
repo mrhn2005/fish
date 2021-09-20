@@ -134,7 +134,7 @@
 <script src="{{asset('js/appear.js')}}"></script>
 <script src="{{asset('js/isotope.js')}}"></script>
 <script src="{{asset('js/mixitup.js')}}"></script>
-<script src="{{asset('js/script.js')}}"></script>
+<script src="{{asset('js/script.js')}}?v=2"></script>
 <script>
     $(document).ready(function() {
 	$(".fancybox-thumb").fancybox({
