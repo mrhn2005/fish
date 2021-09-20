@@ -24,11 +24,11 @@
 }
 
 .footer-logo img {
-    max-height: 80px
+    max-height: 70px
 }
 
 .logo-box .logo img{
-    max-height: 60px !important;
+    max-height: 70px !important;
 }
 .product-name h5{
     white-space:nowrap;
@@ -70,6 +70,16 @@
 
 .contact-info-box .inner-box {
     padding: 45px 5px 70px;
+}
+
+.location-title p {
+    position: relative;
+    color: #333333;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    text-transform: capitalize;
+    font-family: 'Roboto', sans-serif;
 }
 /* .main-menu .navigation > li {
     padding: 15px 0px;

@@ -29,4 +29,7 @@ return [
     'recent_posts' => 'Недавние Посты',
     'related_products' => 'сопутствующие товары',
     'information' => 'Информация',
+    'tehran_office' => 'Тегеран офис',
+    'moscow_office' => 'московский офис',
+    'factory_address' => 'заводской адрес',
 ];

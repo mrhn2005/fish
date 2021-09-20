@@ -46,7 +46,7 @@
                             <iframe src="https://maps.google.it/maps?q=گروه صنایع تحفه&amp;output=embed" width="100%" height="350px" frameborder="1" style="border:2px" allowfullscreen></iframe>
 
                 		</div>
-
+                        <div class="location-title text-center"><p>{{trans('texts.tehran_office')}}</p></div>
                     </div>
 
                     <div class="map-column col-md-4 col-sm-6 col-xs-12">
@@ -56,7 +56,7 @@
                             <iframe src="https://maps.google.it/maps?q=Moscow, shcherbakovskaya 3&amp;output=embed" width="100%" height="350px" frameborder="1" style="border:2px" allowfullscreen></iframe>
 
                 		</div>
-
+                        <div class="location-title text-center"><p>{{trans('texts.moscow_office')}}</p></div>
                     </div>
 
                     <div class="map-column col-md-4 col-sm-6 col-xs-12">
@@ -66,7 +66,7 @@
                             <iframe src="https://maps.google.it/maps?q=شرکت پروتئین آرمان جنوب چابهار&amp;output=embed" width="100%" height="350px" frameborder="1" style="border:2px" allowfullscreen></iframe>
 
                 		</div>
-
+                        <div class="location-title text-center"><p>{{trans('texts.factory_address')}}</p></div>
                     </div>
                 </div>
             </div>

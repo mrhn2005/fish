@@ -29,4 +29,7 @@ return [
     'recent_posts' => 'Recent Posts',
     'related_products' => 'RELATED PRODUCTS',
     'information' => 'Information',
+    'tehran_office' => 'tehran office',
+    'moscow_office' => 'moscow office',
+    'factory_address' => 'factory address',
 ];

@@ -3,7 +3,9 @@
     @foreach ($items as $item)
     <li class="current dropdown">
         <a href="{{$item->link()}}">{{$item->getTranslatedAttribute('title')}}</a>
-        @include('template.menus.sub-menu', ['item' => $item])
+        @if ($item->children->count() > 0 )
+            @include('template.menus.sub-menu', ['item' => $item])
+        @endif
     </li>
     @endforeach
 

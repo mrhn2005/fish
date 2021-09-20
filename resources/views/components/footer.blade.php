@@ -44,30 +44,18 @@
                     <div class="big-column col-md-6 col-sm-12 col-xs-12">
                     	<div class="row clearfix">
                             <!--Footer Column-->
-                        	<div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                        	<div class="footer-column col-md-8 col-sm-8 col-xs-12">
                             	<div class="footer-widget contact-widget">
                                 	<h2>{{trans('texts.contact')}}</h2>
                                     <div class="widget-content">
                                         <ul class="contact-info">
-                                        	<li><span>{{trans('texts.address')}}</span> {{setting(App::getLocale() . '.address')}}</li>
-                                            <li><span>{{trans('texts.call_us')}}</span> {{setting(App::getLocale() . '.phone')}}</li>
+                                        	<li><span>{{trans_choice('texts.address', 2)}}</span> {!!setting(App::getLocale() . '.addresses')!!}</li>
+                                            <li><span>{{trans('texts.call_us')}}</span> {!!setting('site.phones')!!}</li>
                                             <li><span>{{trans('texts.mail_us')}}</span> {{setting('site.email')}}</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-
-                            {{-- <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                            	<iframe
-                                    src="https://maps.google.it/maps?q=گروه صنایع تحفه&amp;output=embed"
-                                    height="300px"
-                                    frameborder="1"
-                                    style="border:2px"
-                                    loading="lazy"
-                                    allowfullscreen
-                                >
-                                </iframe>
-                            </div> --}}
                         </div>
 					</div>
 
