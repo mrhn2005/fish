@@ -4,7 +4,7 @@
         <!--Category Widget-->
         <div class="sidebar-widget sidebar-category">
             <div class="sidebar-title">
-                <h2>PRODUCT CATEGORIES</h2>
+                <h2>{{trans('texts.product_categories')}}</h2>
             </div>
             <ul class="list">
                 @foreach ($categories as $category)

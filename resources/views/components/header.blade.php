@@ -43,7 +43,7 @@
                                                 <div class="form-container">
                                                     <form method="get" action="{{route(App::getLocale() . '.products.index')}}">
                                                         <div class="form-group">
-                                                            <input type="search" name="{{SearchEnum::TERM}}" value="" placeholder="Search Here" required>
+                                                            <input type="search" name="{{SearchEnum::TERM}}" value="" placeholder="{{trans('texts.search_here')}}" required>
                                                             <button type="submit" class="search-btn"><span class="fa fa-search"></span></button>
                                                         </div>
                                                     </form>

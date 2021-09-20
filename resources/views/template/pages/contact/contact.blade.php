@@ -11,7 +11,7 @@
                 	<div class="contact-info-box col-md-4 col-sm-6 col-xs-12">
                     	<div class="inner-box">
                         	<div class="icon-box"><span class="icon flaticon-location-pin"></span></div>
-                            <h3>{{trans('text.address')}}</h3>
+                            <h3>{{trans('texts.address')}}</h3>
                             <div class="text">{!!setting(App::getLocale() . '.addresses')!!}</div>
                             <div class="large-icon"><span class="icon flaticon-location-pin"></span></div>
                         </div>
@@ -20,7 +20,7 @@
                     <div class="contact-info-box col-md-4 col-sm-6 col-xs-12">
                     	<div class="inner-box">
                         	<div class="icon-box"><span class="icon flaticon-headphones"></span></div>
-                            <h3>{{trans('text.call_us')}}</h3>
+                            <h3>{{trans('texts.call_us')}}</h3>
                             <div class="text">{!!setting('site.phones')!!}</div>
                             <div class="large-icon"><span class="icon flaticon-headphones"></span></div>
                         </div>
@@ -29,7 +29,7 @@
                     <div class="contact-info-box col-md-4 col-sm-6 col-xs-12">
                     	<div class="inner-box">
                         	<div class="icon-box"><span class="icon flaticon-business-2"></span></div>
-                            <h3>{{trans('text.mail_us')}}</h3>
+                            <h3>{{trans('texts.mail_us')}}</h3>
                             <div class="text">{{setting('site.email')}}</div>
                             <div class="large-icon"><span class="icon flaticon-business-2"></span></div>
                         </div>
