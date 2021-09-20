@@ -5,7 +5,7 @@ return [
     'our_products' => 'Our Products',
     'our_blog' => 'Our Blog',
     'contact' => 'Contact',
-    'address' => 'Address',
+    'address' => 'Address|Addresses',
     'call_us' => 'Call Us',
     'mail_us' => 'Mail Us',
     'send_us_a_message' => 'SEND US A MESSAGE',

@@ -5,7 +5,7 @@ return [
     'our_products' => 'Наши продукты',
     'our_blog' => 'Наш блог',
     'contact' => 'Контакт',
-    'address' => 'Адрес',
+    'address' => 'Адрес|Aдреса',
     'call_us' => 'Позвоните нам',
     'mail_us' => 'напишите нам',
     'send_us_a_message' => 'ОТПРАВИТЬ СООБЩЕНИЕ',

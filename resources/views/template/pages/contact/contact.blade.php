@@ -11,7 +11,7 @@
                 	<div class="contact-info-box col-md-4 col-sm-6 col-xs-12">
                     	<div class="inner-box">
                         	<div class="icon-box"><span class="icon flaticon-location-pin"></span></div>
-                            <h3>{{trans('texts.address')}}</h3>
+                            <h3>{{trans_choice('texts.address', 20)}}</h3>
                             <div class="text">{!!setting(App::getLocale() . '.addresses')!!}</div>
                             <div class="large-icon"><span class="icon flaticon-location-pin"></span></div>
                         </div>
@@ -36,22 +36,45 @@
                     </div>
                 </div>
             </div>
-
             <div class="contact-form-section">
             	<div class="row clearfix">
                 	<!--Map Column-->
-                	<div class="map-column col-md-5 col-sm-12 col-xs-12">
+                	<div class="map-column col-md-4 col-sm-6 col-xs-12">
 
                         <div class="map-outer">
 							<!--Map Canvas-->
-                            <iframe src="https://maps.google.it/maps?q=گروه صنایع تحفه&amp;output=embed" width="100%" height="450px" frameborder="1" style="border:2px" allowfullscreen></iframe>
+                            <iframe src="https://maps.google.it/maps?q=گروه صنایع تحفه&amp;output=embed" width="100%" height="350px" frameborder="1" style="border:2px" allowfullscreen></iframe>
 
                 		</div>
 
                     </div>
 
+                    <div class="map-column col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="map-outer">
+							<!--Map Canvas-->
+                            <iframe src="https://maps.google.it/maps?q=Moscow, shcherbakovskaya 3&amp;output=embed" width="100%" height="350px" frameborder="1" style="border:2px" allowfullscreen></iframe>
+
+                		</div>
+
+                    </div>
+
+                    <div class="map-column col-md-4 col-sm-6 col-xs-12">
+
+                        <div class="map-outer">
+							<!--Map Canvas-->
+                            <iframe src="https://maps.google.it/maps?q=شرکت پروتئین آرمان جنوب چابهار&amp;output=embed" width="100%" height="350px" frameborder="1" style="border:2px" allowfullscreen></iframe>
+
+                		</div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-section">
+            	<div class="row clearfix">
+
                     <!--form column-->
-                    <div class="form-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-column col-md-12">
 
                         <!-- Comment Form -->
                         <div class="contact-form">

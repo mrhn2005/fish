@@ -68,7 +68,9 @@
     }
 }
 
-
+.contact-info-box .inner-box {
+    padding: 45px 5px 70px;
+}
 /* .main-menu .navigation > li {
     padding: 15px 0px;
 }
