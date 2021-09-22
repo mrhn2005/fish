@@ -1,7 +1,7 @@
 <ul>
     @foreach ($item->children as $child)
         <li class="{{$child->children->count() > 0 ? 'dropdown' : ''}}">
-            <a href="{{'/' . App::getLocale() . $child->link()}}">
+            <a href="{{ Helper::getLink($child->link()) }}">
                 {{$child->getTranslatedAttribute('title')}}
             </a>
 

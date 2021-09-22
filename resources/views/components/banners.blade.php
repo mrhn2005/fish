@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="tp-caption sfb sfb tp-resizeme"
-                        data-x="{{$banner->horizontal_position}}" data-hoffset="{{$banner->horizontal_offset}}"
+                        data-x="{{$banner->horizontal_position}}" data-hoffset="{{$banner->subtitle_horizontal_offset}}"
                         data-y="{{$banner->vertical_position}}" data-voffset="{{$banner->vertical_offset + $banner->subtitle_offset}}"
                         data-speed="1500"
                         data-start="1000"
@@ -36,7 +36,7 @@
                         data-endelementdelay="0.3"
                         data-endspeed="1200"
                         data-endeasing="Power4.easeIn">
-                            <a href="{{App::getLocale() . $banner->url}}" class="theme-btn btn-style-one">{{$banner->getTranslatedAttribute('subtitle')}}</a>
+                            <a href="{{Helper::getLink($banner->url)}}" class="theme-btn btn-style-one">{{$banner->getTranslatedAttribute('subtitle')}}</a>
                         </div>
 
                         </li>

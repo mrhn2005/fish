@@ -30,7 +30,7 @@
                                     <div class="widget-content">
                                     	<ul class="list">
                                             @foreach (menu('footer', '_json') as $item)
-                                                <li><a href="{{$item->link()}}">{{$item->getTranslatedAttribute('title')}}</a></li>
+                                                <li><a href="{{Helper::getLink($item->link())}}">{{$item->getTranslatedAttribute('title')}}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>

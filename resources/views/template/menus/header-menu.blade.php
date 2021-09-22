@@ -2,7 +2,7 @@
 <ul class="navigation clearfix">
     @foreach ($items as $item)
     <li class="current dropdown">
-        <a href="{{$item->link()}}">{{$item->getTranslatedAttribute('title')}}</a>
+        <a href="{{Helper::getLink($item->link())}}">{{$item->getTranslatedAttribute('title')}}</a>
         @if ($item->children->count() > 0 )
             @include('template.menus.sub-menu', ['item' => $item])
         @endif

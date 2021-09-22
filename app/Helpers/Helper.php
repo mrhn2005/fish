@@ -5,6 +5,7 @@ namespace App\Helpers;
 use App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Models\Category as Category;
 
@@ -105,5 +106,18 @@ class Helper
         $routeImplode = explode('/', request()->path(), 2);
         $routeImplode[0] = $locale;
         return '/' . implode('/', $routeImplode);
+    }
+
+    public static function getLink($link)
+    {
+        if (Str::contains($link,'http')) {
+            return $link;
+        }
+
+        if ($link == '#' ) {
+            return '#';
+        }
+
+        return '/' . App::getLocale() . $link;
     }
 }
